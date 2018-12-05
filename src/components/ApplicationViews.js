@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register"
 import UsersManager from "../managers/UsersManager";
+import MatchesList from "./matches/MatchesList";
+import MatchesManager from "../managers/MatchesManager";
 
 export default class ApplicationViews extends Component {
     state = {
@@ -13,15 +15,20 @@ export default class ApplicationViews extends Component {
     };
 
     componentDidMount() {
-        let usersLoading = UsersManager.getAll().then(allUsers => {
+        let usersLoading = UsersManager.getAll().then(users => {
             this.setState({
-                users: allUsers
+                users: users
             });
         });
 
-        // isAuthenticated = () => sessionStorage.getItem("username") !== null
+        let matchesLoading = MatchesManager.getAll().then(matches => {
+            this.setState({
+                matches: matches
+            });
+        });
 
-        Promise.all([usersLoading]).then(() => {
+
+        Promise.all([usersLoading, matchesLoading]).then(() => {
             this.setState(
                 {
                     initialized: true
@@ -30,11 +37,31 @@ export default class ApplicationViews extends Component {
         })
     }
 
+    isAuthenticated = () => sessionStorage.getItem("username") !== null
+
+    unmatch = id => {
+        return MatchesManager.removeAndList(id).then(matches =>
+            this.setState({
+                matches: matches
+            })
+        );
+    };
+
 
     render() {
         if (this.state.initialized) {
             return (
                 <React.Fragment>
+                    <Route exact path="/matches" render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <MatchesList {...props}
+                                matches={this.state.matches}
+                                users={this.state.users}
+                                unmatch={this.unmatch} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }} />
                     <Route exact path="/login" render={props => {
                         return <Login {...props}
                             users={this.state.users} />;

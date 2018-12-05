@@ -73,9 +73,9 @@ export default class MenuExampleHeader extends Component {
         />
         <Menu.Item
           as={Link}
-          to="/users"
-          name="users"
-          active={activeItem === "users"}
+          to="/matches"
+          name="matches"
+          active={activeItem === "matches"}
           onClick={this.handleItemClick}
         />
         <Menu.Menu position="right">
