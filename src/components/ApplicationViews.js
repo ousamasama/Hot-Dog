@@ -5,12 +5,18 @@ import Register from "./authentication/Register"
 import UsersManager from "../managers/UsersManager";
 import MatchesList from "./matches/MatchesList";
 import MatchesManager from "../managers/MatchesManager";
+import RandomDog from "../randomdog/RandomDog";
+import DogsList from "./dogs/DogsList"
+import DogsManager from "../managers/DogsManager";
+import APIManager from "../managers/APIManager";
 
 export default class ApplicationViews extends Component {
     state = {
         messages: [],
         matches: [],
+        dogs: [],
         users: [],
+        randomDog: [],
         initialized: false
     };
 
@@ -27,8 +33,26 @@ export default class ApplicationViews extends Component {
             });
         });
 
+        let dogsLoading = DogsManager.getAll().then(dogs => {
+            this.setState({
+                dogs: dogs
+            });
+        });
 
-        Promise.all([usersLoading, matchesLoading]).then(() => {
+        // let oneRandomDogLoading = APIManager.oneRandomDog().then(randomDog => {
+        //     this.setState({
+        //         randomDog: randomDog
+        //     })
+        // })
+
+        // let manyRandomDogsLoading = APIManager.manyRandomDogs().then(randomDog => {
+        //     this.setState({
+        //         randomDog: randomDog
+        //     })
+        // })
+
+
+        Promise.all([usersLoading, matchesLoading, dogsLoading]).then(() => {
             this.setState(
                 {
                     initialized: true
@@ -48,16 +72,37 @@ export default class ApplicationViews extends Component {
     };
 
 
+
     render() {
         if (this.state.initialized) {
             return (
                 <React.Fragment>
+                    <Route exact path="/randomdog" render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <RandomDog {...props}
+                                randomDog={this.state.randomDog}
+                            />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }} />
                     <Route exact path="/matches" render={(props) => {
                         if (this.isAuthenticated()) {
                             return <MatchesList {...props}
                                 matches={this.state.matches}
                                 users={this.state.users}
                                 unmatch={this.unmatch} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }} />
+                    <Route exact path="/dogs" render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <DogsList {...props}
+                                matches={this.state.matches}
+                                // match={this.match}
+                                users={this.state.users}
+                                dogs={this.state.dogs} />
                         } else {
                             return <Redirect to="/login" />
                         }

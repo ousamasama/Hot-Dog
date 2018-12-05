@@ -1,4 +1,6 @@
 const remoteURL = "http://localhost:5002"
+const manyRandomDogsURL = "https://dog.ceo/api/breeds/image/random/50"
+const oneRandomDogURL = "https://dog.ceo/api/breeds/image/random"
 
 class APIManager {
     constructor(route) {
@@ -11,6 +13,14 @@ class APIManager {
 
   all() {
     return fetch(`${remoteURL}/${this.route}`).then(data => data.json())
+  }
+
+  static manyRandomDogs() {
+    return fetch(`${manyRandomDogsURL}`).then(data => data.json())
+  }
+
+  static oneRandomDog() {
+    return fetch(`${oneRandomDogURL}`).then(data => data.json())
   }
 
   allSortedSoonest() {
