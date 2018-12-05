@@ -1,0 +1,87 @@
+{
+    "user": [
+        {
+            "username": "ousama",
+            "password": "ousama",
+            "id": 1,
+            "avatar": ""
+        },
+        {
+            "username": "brendan",
+            "password": "brendan",
+            "id": 2,
+            "avatar": ""
+        },
+        {
+            "username": "elyse",
+            "password": "elyse",
+            "id": 3,
+            "avatar": ""
+        },
+        {
+            "username": "zac",
+            "password": "zac",
+            "id": 4,
+            "avatar": ""
+        },
+        {
+            "username": "michael",
+            "password": "michael",
+            "id": 5,
+            "avatar": ""
+        }
+    ],
+    "friends": [
+        {
+            "friendname": "ousama",
+            "username": "zac",
+            "id": 1
+        },
+        {
+            "friendname": "dillonWilliams",
+            "username": "zac",
+            "id": 2
+        },
+        {
+            "friendname": "Robby",
+            "username": "zac",
+            "id": 3
+        },
+        {
+            "friendname": "michael",
+            "username": "ousama",
+            "id": 4
+        },
+        {
+            "friendname": "dillonWilliams",
+            "username": "ousama",
+            "id": 5
+        },
+        {
+            "friendname": "Robby",
+            "username": "ousama",
+            "id": 6
+        },
+        {
+            "friendname": "kazathur92",
+            "username": "ousama",
+            "id": 7
+        }
+    ],
+    "messages": [
+        {
+            "message": "war smeagol",
+            "userId": "ousama",
+            "date": "018-11-15T05:34:28.726Z",
+            "id": 1
+        },
+        {
+            "message": "pipi cam",
+            "userId": "michael",
+            "date": "018-11-15T05:34:28.726Z",
+            "id": 2
+        }
+    ],
+    "dogs": [],
+    "parks": []
+}
