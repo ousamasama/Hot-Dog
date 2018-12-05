@@ -66,6 +66,20 @@ export default class MenuExampleHeader extends Component {
         />
         <Menu.Item
           as={Link}
+          to="/dogs"
+          name="dogs"
+          active={activeItem === "dogs"}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={Link}
+          to="/randomdog"
+          name="Random Dog"
+          active={activeItem === "randomdog"}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={Link}
           to="/messages"
           name="messages"
           active={activeItem === "messages"}

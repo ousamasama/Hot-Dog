@@ -101,31 +101,36 @@
             "name": "Olive",
             "owner": "Ousama",
             "ownerId": 1,
-            "picture": "https://i.imgur.com/DQk9EkN.jpg"
+            "picture": "https://i.imgur.com/DQk9EkN.jpg",
+            "id": 1
         },
         {
             "name": "Kiwi",
             "owner": "Brendan",
             "ownerId": 2,
-            "picture": "https://i.imgur.com/lAuzYVi.jpg"
+            "picture": "https://i.imgur.com/lAuzYVi.jpg",
+            "id": 2
         },
         {
             "name": "Oshie",
             "owner": "Brendan",
             "ownerId": 7,
-            "picture": "https://i.imgur.com/p4dU5jQ.jpg"
+            "picture": "https://i.imgur.com/p4dU5jQ.jpg",
+            "id": 3
         },
         {
             "name": "Murph",
             "owner": "Joe",
             "ownerId": 6,
-            "picture": "https://i.imgur.com/K4eEdil.jpg"
+            "picture": "https://i.imgur.com/K4eEdil.jpg",
+            "id": 4
         },
         {
             "name": "Billy",
             "owner": "Zac",
             "ownerId": 4,
-            "picture": "https://i.imgur.com/4ZvKt3v.png"
+            "picture": "https://i.imgur.com/4ZvKt3v.png",
+            "id": 5
         }
     ],
     "parks": []
