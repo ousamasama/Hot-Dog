@@ -12,6 +12,7 @@ export default class DogsCard extends Component {
     render() {
         let currentUser = sessionStorage.getItem("username");
         let currentUserId = sessionStorage.getItem("userID");
+        let currentUserIdParsed = Number(currentUserId)
         let myMatchesUserIds = this.props.matches
             .filter(match => {
                 if (match.username === currentUser) {
@@ -24,10 +25,8 @@ export default class DogsCard extends Component {
                 return match;
             });
         let thisSpecificMatch;
-        console.log(myMatchesUserIds)
         myMatchesUserIds.forEach(thisMatch => {
             if (thisMatch.username === this.props.dog.username) {
-                console.log(thisMatch)
                 thisSpecificMatch = thisMatch.id;
             }
         });
@@ -54,7 +53,8 @@ export default class DogsCard extends Component {
                                 content="Match Me?"
                                 icon="heart"
                                 onClick={
-                                    () => this.props.match(this.props.dog.owner, currentUser, currentUserId, this.props.dog.ownerId)
+                                    () => {this.props.match(this.props.dog.owner, currentUser, currentUserId, this.props.dog.ownerId)
+                                     this.props.like(this.props.dog.ownerId, currentUserIdParsed)}
                                     // .then(() => this.props.history.push("/matches"))
                                 }
                                 className="card-link">

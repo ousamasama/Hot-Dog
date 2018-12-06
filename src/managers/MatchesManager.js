@@ -10,12 +10,13 @@ class MatchesManager extends APIManager {
   removeAndList(oldMatch, user) {
     return this.delete(oldMatch, user).then(() => this.all())
   }
-  addAndList(newMatch, user, userId, friendId) {
+  addAndList(newMatch, user, userId, friendId, likedBy) {
     let myNewMatch = {
       matchname: newMatch,
       username: user,
       userId: userId,
-      friendId: friendId
+      friendId: friendId,
+      likedBy: likedBy
     }
       return this.post(myNewMatch).then(() => this.all())
   }

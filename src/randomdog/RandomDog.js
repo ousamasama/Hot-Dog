@@ -4,7 +4,6 @@ import { Button } from 'semantic-ui-react'
 
 export default class RandomDog extends Component {
     render() {
-        console.log(this.props.randomDog)
         return (
             <React.Fragment>
                 <section className="randomDogContainer">

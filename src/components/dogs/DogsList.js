@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Image } from 'semantic-ui-react'
 import DogsCard from "./DogsCard"
-import LikedDogsCard from "./LikedDogsCard"
+import MatchedDogsCard from "./MatchedDogsCard"
 import "./DogsCard.css"
 
 export default class DogsList extends Component {
@@ -22,9 +22,9 @@ export default class DogsList extends Component {
                     {
                         this.props.dogs.map(dog => {
                             if (!myMatchesUserNames.includes(dog.owner) && dog.owner !== currentUser) {
-                                return <DogsCard matches={this.props.matches} match={this.props.match} key={dog.id} dog={dog} />
+                                return <DogsCard matches={this.props.matches} like={this.props.like} match={this.props.match} key={dog.id} dog={dog} />
                             } else if(myMatchesUserNames.includes(dog.owner)) {
-                                return <LikedDogsCard matches={this.props.matches} match={this.props.match} key={dog.id} dog={dog} />
+                                return <MatchedDogsCard matches={this.props.matches} like={this.props.like} match={this.props.match} key={dog.id} dog={dog} />
                             } else {
                                 return null
                             }

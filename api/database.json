@@ -77,28 +77,47 @@
       "username": "Ousama",
       "userId": 1,
       "friendId": 3,
-      "id": 1
+      "id": 3
     },
     {
       "matchname": "Elyse",
       "username": "Brendan",
       "userId": 2,
       "friendId": 4,
+      "id": 4
+    },
+    {
+      "matchname": "Ousama",
+      "username": "Brendan",
+      "userId": 3,
+      "friendId": 1,
+      "id": 5
+    }
+  ],
+  "likes": [
+    {
+      "likedUserId": 2,
+      "likedByUserId": 1,
       "id": 1
+    },
+    {
+      "likedUserId": 1,
+      "likedByUserId": 2,
+      "id": 2
     }
   ],
   "messages": [
     {
       "message": "beep",
       "username": "Ousama",
-      "userId": "1",
+      "userId": 1,
       "date": "018-11-15T05:34:28.726Z",
       "id": 1
     },
     {
       "message": "boop",
       "username": "Zac",
-      "userId": "4",
+      "userId": 4,
       "date": "018-11-15T05:34:28.726Z",
       "id": 2
     }

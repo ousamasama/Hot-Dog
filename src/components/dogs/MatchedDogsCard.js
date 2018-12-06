@@ -3,7 +3,7 @@ import { Button, Image, Header, Modal, Card } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./DogsCard.css"
 
-export default class LikedDogsCard extends Component {
+export default class MatchedDogsCard extends Component {
     state = { open: false };
 
     close = () => this.setState({ open: false });
@@ -24,7 +24,6 @@ export default class LikedDogsCard extends Component {
                 return match;
             });
         let thisSpecificMatch;
-        console.log(myMatchesUserIds)
         myMatchesUserIds.forEach(thisMatch => {
             if (thisMatch.username === this.props.dog.username) {
                 console.log(thisMatch)

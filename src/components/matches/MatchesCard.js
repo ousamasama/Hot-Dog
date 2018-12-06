@@ -26,7 +26,6 @@ export default class MatchesCard extends Component {
     let thisSpecificMatch;
     myMatchesUserIds.forEach(thisMatch => {
       if (thisMatch.matchname === this.props.user.username) {
-        console.log(thisMatch)
         thisSpecificMatch = thisMatch.id;
       }
     });
