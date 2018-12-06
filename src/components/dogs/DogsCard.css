@@ -1,0 +1,26 @@
+.matchesContainer {
+    display: grid;
+    grid-template-areas:
+      "a a a"
+      "b b b";
+  
+  }
+
+  .card-title {
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+}
+
+.dog-pic {
+    height:250px;
+    width:100%;
+}
+
+.likedCard {
+
+}
+
+.matchesCard {
+
+}

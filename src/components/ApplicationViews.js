@@ -53,7 +53,7 @@ export default class ApplicationViews extends Component {
         // })
 
 
-        Promise.all([usersLoading, matchesLoading, dogsLoading]).then(() => {
+        Promise.all([usersLoading, dogsLoading, matchesLoading]).then(() => {
             this.setState(
                 {
                     initialized: true
@@ -74,11 +74,11 @@ export default class ApplicationViews extends Component {
 
     match = (myNewMatch, myUsername, myId, theirId) =>
     MatchesManager.addAndList(myNewMatch, myUsername, myId, theirId).then(() => MatchesManager.all())
-      .then(friends =>
+      .then(matches =>
         this.setState({
-          friends: friends
+          matches: matches
         })
-      );
+      )
 
 
 

@@ -3,7 +3,7 @@ import { Button, Image, Header, Modal, Card } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./DogsCard.css"
 
-export default class DogsCard extends Component {
+export default class LikedDogsCard extends Component {
     state = { open: false };
 
     close = () => this.setState({ open: false });
@@ -36,19 +36,20 @@ export default class DogsCard extends Component {
         const { open, dimmer } = this.state;
         return (
             <React.Fragment>
-                <Card.Group className="matchesCard">
+                <Card.Group className="likedCard">
                     <Card color='green' key={this.props.dog.id} className="card">
                         <h5 className="card-title">
                         <Card.Header>{this.props.dog.name}</Card.Header>
                             <Image
-                                className="dog-pic"
                                 // size="medium"
+                                className="dog-pic"
                                 centered
                                 circular
                                 src={this.props.dog.picture} />
+                                <Card.Meta>You liked {this.props.dog.name}</Card.Meta>
                             {/* <Card.Meta>City Maybe?</Card.Meta> */}
                             {/* <Card.Meta>Closest Dog Park?</Card.Meta> */}
-                            <Button
+                            {/* <Button
                                 size="tiny"
                                 color="pink"
                                 content="Match Me?"
@@ -58,7 +59,7 @@ export default class DogsCard extends Component {
                                     // .then(() => this.props.history.push("/matches"))
                                 }
                                 className="card-link">
-                            </Button>
+                            </Button> */}
                             {/* <Modal
                                 dimmer={dimmer}
                                 open={open}

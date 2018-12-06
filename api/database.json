@@ -18,8 +18,8 @@
       "username": "Elyse",
       "password": "elyse",
       "id": 3,
-      "avatar": "",
-      "dog": ""
+      "avatar": "https://imgur.com/jMgqWNX.jpg",
+      "dog": "https://imgur.com/jMgqWNX.jpg"
     },
     {
       "username": "Zac",
@@ -85,17 +85,6 @@
       "userId": 2,
       "friendId": 4,
       "id": 1
-    },
-    {
-      "username": "Ousama",
-      "id": 3
-    },
-    {
-      "matchname": "Samuel",
-      "username": "Ousama",
-      "userId": "1",
-      "friendId": 7,
-      "id": 4
     }
   ],
   "messages": [
@@ -156,6 +145,13 @@
       "ownerId": 8,
       "picture": "https://i.imgur.com/rICqdMu.jpg",
       "id": 6
+    },
+    {
+      "name": "Hannah Montana",
+      "owner": "Elyse",
+      "ownerId": 3,
+      "picture": "https://imgur.com/jMgqWNX.jpg",
+      "id": 7
     }
   ],
   "parks": []

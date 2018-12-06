@@ -1,6 +1,6 @@
 import APIManager from "./APIManager"
 
-class UserManager extends APIManager {
+class DogsManager extends APIManager {
   getUser(id) {
     return this.get(id)
   }
@@ -21,4 +21,4 @@ class UserManager extends APIManager {
 //   }
 }
 
-export default new UserManager("dogs")
+export default new DogsManager("dogs")
