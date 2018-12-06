@@ -3,7 +3,7 @@ import { Button, Image, Header, Modal, Card } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./DogsCard.css"
 
-export default class DogsCard extends Component {
+export default class MatchedDogsCard extends Component {
     state = { open: false };
 
     close = () => this.setState({ open: false });
@@ -12,7 +12,6 @@ export default class DogsCard extends Component {
     render() {
         let currentUser = sessionStorage.getItem("username");
         let currentUserId = sessionStorage.getItem("userID");
-        let currentUserIdParsed = Number(currentUserId)
         let myMatchesUserIds = this.props.matches
             .filter(match => {
                 if (match.username === currentUser) {
@@ -27,6 +26,7 @@ export default class DogsCard extends Component {
         let thisSpecificMatch;
         myMatchesUserIds.forEach(thisMatch => {
             if (thisMatch.username === this.props.dog.username) {
+                console.log(thisMatch)
                 thisSpecificMatch = thisMatch.id;
             }
         });
@@ -35,30 +35,30 @@ export default class DogsCard extends Component {
         const { open, dimmer } = this.state;
         return (
             <React.Fragment>
-                <Card.Group className="matchesCard">
+                <Card.Group className="likedCard">
                     <Card color='green' key={this.props.dog.id} className="card">
                         <h5 className="card-title">
                         <Card.Header>{this.props.dog.name}</Card.Header>
                             <Image
-                                className="dog-pic"
                                 // size="medium"
+                                className="dog-pic"
                                 centered
                                 circular
                                 src={this.props.dog.picture} />
+                                <Card.Meta>You liked {this.props.dog.name}</Card.Meta>
                             {/* <Card.Meta>City Maybe?</Card.Meta> */}
                             {/* <Card.Meta>Closest Dog Park?</Card.Meta> */}
-                            <Button
+                            {/* <Button
                                 size="tiny"
                                 color="pink"
                                 content="Match Me?"
                                 icon="heart"
                                 onClick={
-                                    () => {this.props.match(this.props.dog.owner, currentUser, currentUserId, this.props.dog.ownerId)
-                                     this.props.like(this.props.dog.ownerId, currentUserIdParsed)}
+                                    () => this.props.match(this.props.dog.owner, currentUser, currentUserId, this.props.dog.ownerId)
                                     // .then(() => this.props.history.push("/matches"))
                                 }
                                 className="card-link">
-                            </Button>
+                            </Button> */}
                             {/* <Modal
                                 dimmer={dimmer}
                                 open={open}

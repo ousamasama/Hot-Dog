@@ -1,137 +1,177 @@
 {
-    "users": [
-        {
-            "username": "Ousama",
-            "password": "ousama",
-            "id": 1,
-            "avatar": "https://i.imgur.com/DQk9EkN.jpg",
-            "dog": "https://i.imgur.com/DQk9EkN.jpg"
-        },
-        {
-            "username": "Brendan",
-            "password": "brendan",
-            "id": 2,
-            "avatar": "https://i.imgur.com/lAuzYVi.jpg",
-            "dog": "https://i.imgur.com/lAuzYVi.jpg"
-        },
-        {
-            "username": "Elyse",
-            "password": "elyse",
-            "id": 3,
-            "avatar": "",
-            "dog": ""
-        },
-        {
-            "username": "Zac",
-            "password": "zac",
-            "id": 4,
-            "avatar": "https://i.imgur.com/4ZvKt3v.png",
-            "dog": "https://i.imgur.com/4ZvKt3v.png"
-        },
-        {
-            "username": "Michael",
-            "password": "michael",
-            "id": 5,
-            "avatar": "",
-            "dog": ""
-        },
-        {
-            "username": "Joe",
-            "password": "joe",
-            "id": 6,
-            "avatar": "",
-            "dog": "https://i.imgur.com/K4eEdil.jpg"
-        },
-        {
-            "username": "Samuel",
-            "password": "samuel",
-            "id": 7,
-            "avatar": "",
-            "dog": "https://i.imgur.com/p4dU5jQ.jpg"
-        }
-    ],
-    "matches": [
-        {
-            "matchname": "Ousama",
-            "username": "Zac",
-            "userId": 1,
-            "friendId": 2,
-            "id": 1
-        },
-        {
-            "matchname": "Zac",
-            "username": "Ousama",
-            "userId": 4,
-            "friendId": 1,
-            "id": 2
-        },
-        {
-            "matchname": "Brendan",
-            "username": "Ousama",
-            "userId": 1,
-            "friendId": 3,
-            "id": 1
-        },
-        {
-            "matchname": "Elyse",
-            "username": "Brendan",
-            "userId": 2,
-            "friendId": 4,
-            "id": 1
-        }
-    ],
-    "messages": [
-        {
-            "message": "beep",
-            "username": "Ousama",
-            "userId": "1",
-            "date": "018-11-15T05:34:28.726Z",
-            "id": 1
-        },
-        {
-            "message": "boop",
-            "username": "Zac",
-            "userId": "4",
-            "date": "018-11-15T05:34:28.726Z",
-            "id": 2
-        }
-    ],
-    "dogs": [
-        {
-            "name": "Olive",
-            "owner": "Ousama",
-            "ownerId": 1,
-            "picture": "https://i.imgur.com/DQk9EkN.jpg",
-            "id": 1
-        },
-        {
-            "name": "Kiwi",
-            "owner": "Brendan",
-            "ownerId": 2,
-            "picture": "https://i.imgur.com/lAuzYVi.jpg",
-            "id": 2
-        },
-        {
-            "name": "Oshie",
-            "owner": "Brendan",
-            "ownerId": 7,
-            "picture": "https://i.imgur.com/p4dU5jQ.jpg",
-            "id": 3
-        },
-        {
-            "name": "Murph",
-            "owner": "Joe",
-            "ownerId": 6,
-            "picture": "https://i.imgur.com/K4eEdil.jpg",
-            "id": 4
-        },
-        {
-            "name": "Billy",
-            "owner": "Zac",
-            "ownerId": 4,
-            "picture": "https://i.imgur.com/4ZvKt3v.png",
-            "id": 5
-        }
-    ],
-    "parks": []
+  "users": [
+    {
+      "username": "Ousama",
+      "password": "ousama",
+      "id": 1,
+      "avatar": "https://i.imgur.com/DQk9EkN.jpg",
+      "dog": "https://i.imgur.com/DQk9EkN.jpg"
+    },
+    {
+      "username": "Brendan",
+      "password": "brendan",
+      "id": 2,
+      "avatar": "https://i.imgur.com/lAuzYVi.jpg",
+      "dog": "https://i.imgur.com/lAuzYVi.jpg"
+    },
+    {
+      "username": "Elyse",
+      "password": "elyse",
+      "id": 3,
+      "avatar": "https://imgur.com/jMgqWNX.jpg",
+      "dog": "https://imgur.com/jMgqWNX.jpg"
+    },
+    {
+      "username": "Zac",
+      "password": "zac",
+      "id": 4,
+      "avatar": "https://i.imgur.com/4ZvKt3v.png",
+      "dog": "https://i.imgur.com/4ZvKt3v.png"
+    },
+    {
+      "username": "Michael",
+      "password": "michael",
+      "id": 5,
+      "avatar": "",
+      "dog": ""
+    },
+    {
+      "username": "Joe",
+      "password": "joe",
+      "id": 6,
+      "avatar": "",
+      "dog": "https://i.imgur.com/K4eEdil.jpg"
+    },
+    {
+      "username": "Samuel",
+      "password": "samuel",
+      "id": 7,
+      "avatar": "",
+      "dog": "https://i.imgur.com/p4dU5jQ.jpg"
+    },
+    {
+      "username": "Jessica",
+      "password": "jessica",
+      "id": 8,
+      "avatar": "",
+      "dog": "https://i.imgur.com/rICqdMu.jpg"
+    }
+  ],
+  "matches": [
+    {
+      "matchname": "Ousama",
+      "username": "Zac",
+      "userId": 1,
+      "friendId": 2,
+      "id": 1
+    },
+    {
+      "matchname": "Zac",
+      "username": "Ousama",
+      "userId": 4,
+      "friendId": 1,
+      "id": 2
+    },
+    {
+      "matchname": "Brendan",
+      "username": "Ousama",
+      "userId": 1,
+      "friendId": 3,
+      "id": 3
+    },
+    {
+      "matchname": "Elyse",
+      "username": "Brendan",
+      "userId": 2,
+      "friendId": 4,
+      "id": 4
+    },
+    {
+      "matchname": "Ousama",
+      "username": "Brendan",
+      "userId": 3,
+      "friendId": 1,
+      "id": 5
+    }
+  ],
+  "likes": [
+    {
+      "likedUserId": 2,
+      "likedByUserId": 1,
+      "id": 1
+    },
+    {
+      "likedUserId": 1,
+      "likedByUserId": 2,
+      "id": 2
+    }
+  ],
+  "messages": [
+    {
+      "message": "beep",
+      "username": "Ousama",
+      "userId": 1,
+      "date": "018-11-15T05:34:28.726Z",
+      "id": 1
+    },
+    {
+      "message": "boop",
+      "username": "Zac",
+      "userId": 4,
+      "date": "018-11-15T05:34:28.726Z",
+      "id": 2
+    }
+  ],
+  "dogs": [
+    {
+      "name": "Olive",
+      "owner": "Ousama",
+      "ownerId": 1,
+      "picture": "https://i.imgur.com/DQk9EkN.jpg",
+      "id": 1
+    },
+    {
+      "name": "Kiwi",
+      "owner": "Brendan",
+      "ownerId": 2,
+      "picture": "https://i.imgur.com/lAuzYVi.jpg",
+      "id": 2
+    },
+    {
+      "name": "Oshie",
+      "owner": "Samuel",
+      "ownerId": 7,
+      "picture": "https://i.imgur.com/p4dU5jQ.jpg",
+      "id": 3
+    },
+    {
+      "name": "Murph",
+      "owner": "Joe",
+      "ownerId": 6,
+      "picture": "https://i.imgur.com/K4eEdil.jpg",
+      "id": 4
+    },
+    {
+      "name": "Billy",
+      "owner": "Zac",
+      "ownerId": 4,
+      "picture": "https://i.imgur.com/4ZvKt3v.png",
+      "id": 5
+    },
+    {
+      "name": "Wally",
+      "owner": "Jessica",
+      "ownerId": 8,
+      "picture": "https://i.imgur.com/rICqdMu.jpg",
+      "id": 6
+    },
+    {
+      "name": "Hannah Montana",
+      "owner": "Elyse",
+      "ownerId": 3,
+      "picture": "https://imgur.com/jMgqWNX.jpg",
+      "id": 7
+    }
+  ],
+  "parks": []
 }

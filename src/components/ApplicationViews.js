@@ -5,8 +5,10 @@ import Register from "./authentication/Register"
 import UsersManager from "../managers/UsersManager";
 import MatchesList from "./matches/MatchesList";
 import MatchesManager from "../managers/MatchesManager";
+import LikesManager from "../managers/LikesManager";
 import RandomDog from "../randomdog/RandomDog";
 import DogsList from "./dogs/DogsList"
+import DogsDetail from "./dogs/DogsDetail"
 import DogsManager from "../managers/DogsManager";
 import APIManager from "../managers/APIManager";
 
@@ -14,8 +16,11 @@ export default class ApplicationViews extends Component {
     state = {
         messages: [],
         matches: [],
+        // likes: [], 
         dogs: [],
         users: [],
+        likedMes: [],
+        myLikes: [],
         randomDog: [],
         initialized: false
     };
@@ -39,6 +44,24 @@ export default class ApplicationViews extends Component {
             });
         });
 
+        // let likesLoading = LikesManager.getAll().then(likes => {
+        //     this.setState({
+        //         likes: likes
+        //     });
+        // });
+
+        let myLikesLoading = LikesManager.myLikes().then(myLikes => {
+            this.setState({
+                myLikes: myLikes
+            });
+        });
+
+        let likedMeLoading = LikesManager.likedMe().then(likedMes => {
+            this.setState({
+                likedMes: likedMes
+            });
+        });
+
         // let oneRandomDogLoading = APIManager.oneRandomDog().then(randomDog => {
         //     this.setState({
         //         randomDog: randomDog
@@ -52,7 +75,7 @@ export default class ApplicationViews extends Component {
         // })
 
 
-        Promise.all([usersLoading, matchesLoading, dogsLoading]).then(() => {
+        Promise.all([usersLoading, dogsLoading, matchesLoading, myLikesLoading, likedMeLoading]).then(() => {
             this.setState(
                 {
                     initialized: true
@@ -63,13 +86,29 @@ export default class ApplicationViews extends Component {
 
     isAuthenticated = () => sessionStorage.getItem("username") !== null
 
-    unmatch = id => {
-        return MatchesManager.removeAndList(id).then(matches =>
-            this.setState({
-                matches: matches
-            })
-        );
-    };
+    // unmatch = id => {
+    //     return MatchesManager.removeAndList(id).then(matches =>
+    //         this.setState({
+    //             matches: matches
+    //         })
+    //     );
+    // };
+
+    match = (myNewMatch, myUsername, myId, theirId) =>
+        MatchesManager.addAndList(myNewMatch, myUsername, myId, theirId).then(() => MatchesManager.all())
+            .then(matches =>
+                this.setState({
+                    matches: matches
+                })
+            )
+
+    like = (yourId, theirId) =>
+        LikesManager.addAndList(yourId, theirId).then(() => LikesManager.all())
+            .then(likes =>
+                this.setState({
+                    likes: likes
+                })
+            )
 
 
 
@@ -91,7 +130,11 @@ export default class ApplicationViews extends Component {
                             return <MatchesList {...props}
                                 matches={this.state.matches}
                                 users={this.state.users}
-                                unmatch={this.unmatch} />
+                                // likes={this.state.likes}
+                                myLikes={this.state.myLikes}
+                                likedMes={this.state.likedMes}
+                            // unmatch={this.unmatch} 
+                            />
                         } else {
                             return <Redirect to="/login" />
                         }
@@ -100,7 +143,22 @@ export default class ApplicationViews extends Component {
                         if (this.isAuthenticated()) {
                             return <DogsList {...props}
                                 matches={this.state.matches}
-                                // match={this.match}
+                                match={this.match}
+                                like={this.like}
+                                // likes={this.state.likes}
+                                users={this.state.users}
+                                dogs={this.state.dogs} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }} />
+                    <Route exact path="/dogs/:dogsId(\d+)" render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <DogsDetail {...props}
+                                matches={this.state.matches}
+                                // likes={this.state.likes}
+                                match={this.match}
+                                like={this.like}
                                 users={this.state.users}
                                 dogs={this.state.dogs} />
                         } else {

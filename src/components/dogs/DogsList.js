@@ -1,34 +1,33 @@
 import React, { Component } from 'react'
-// import UsersCard from "./UsersCard"
-import { Button } from 'semantic-ui-react'
+import { Button, Image } from 'semantic-ui-react'
 import DogsCard from "./DogsCard"
-// import "./UsersCard.css"
+import MatchedDogsCard from "./MatchedDogsCard"
+import "./DogsCard.css"
 
 export default class DogsList extends Component {
     render() {
-        // let currentUser = sessionStorage.getItem("username")
-        // let myMatchesUserNames = this.props.matches.filter(match => {
-        //     if (match.username === currentUser) {
-        //         return true
-        //     } else {
-        //         return false
-        //     }
-        // }).map(match => {
-        //     return match.matchname
-        // })
+        let currentUser = sessionStorage.getItem("username")
+        let myMatchesUserNames = this.props.matches.filter(match => {
+            if (match.username === currentUser) {
+                return true
+            } else {
+                return false
+            }
+        }).map(match => {
+            return match.matchname
+        })
         return (
             <React.Fragment>
                 <section className="matchesContainer">
                     {
                         this.props.dogs.map(dog => {
-                            // if (myMatchesUserNames.includes(user.username)) {
-                            //     return <MatchesCard key={user.id} user={user} myMatchesUserNames={myMatchesUserNames} unmatch={this.props.unmatch}{...this.props} />
-                            // // } else if (user.username !== currentUser) {
-                            // //     return <UsersCard key={user.id} user={user} myMatchesUserNames={myMatchesUserNames} addFriend={this.props.addFriend} {...this.props} />
-                            // } else {
-                            //     return null
-                            // }
-                            return <DogsCard key={dog.id} dog={dog} />
+                            if (!myMatchesUserNames.includes(dog.owner) && dog.owner !== currentUser) {
+                                return <DogsCard matches={this.props.matches} like={this.props.like} match={this.props.match} key={dog.id} dog={dog} />
+                            } else if(myMatchesUserNames.includes(dog.owner)) {
+                                return <MatchedDogsCard matches={this.props.matches} like={this.props.like} match={this.props.match} key={dog.id} dog={dog} />
+                            } else {
+                                return null
+                            }
                         })
                     }
                 </section>

@@ -3,7 +3,7 @@ import { Menu, Icon, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default class MenuExampleHeader extends Component {
-  state = {};
+  state = { activeItem: 'home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
