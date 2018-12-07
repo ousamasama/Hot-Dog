@@ -18,8 +18,8 @@
       "username": "Elyse",
       "password": "elyse",
       "id": 3,
-      "avatar": "https://imgur.com/jMgqWNX.jpg",
-      "dog": "https://imgur.com/jMgqWNX.jpg"
+      "avatar": "https://i.imgur.com/QalfdOT.jpg",
+      "dog": "https://i.imgur.com/QalfdOT.jpg"
     },
     {
       "username": "Zac",
@@ -32,29 +32,141 @@
       "username": "Michael",
       "password": "michael",
       "id": 5,
-      "avatar": "",
-      "dog": ""
+      "avatar": "https://i.imgur.com/IuCEUoE.jpg",
+      "dog": "https://i.imgur.com/IuCEUoE.jpg"
     },
     {
       "username": "Joe",
       "password": "joe",
       "id": 6,
-      "avatar": "",
+      "avatar": "https://i.imgur.com/K4eEdil.jpg",
       "dog": "https://i.imgur.com/K4eEdil.jpg"
     },
     {
       "username": "Samuel",
       "password": "samuel",
       "id": 7,
-      "avatar": "",
+      "avatar": "https://i.imgur.com/p4dU5jQ.jpg",
       "dog": "https://i.imgur.com/p4dU5jQ.jpg"
     },
     {
       "username": "Jessica",
       "password": "jessica",
       "id": 8,
-      "avatar": "",
+      "avatar": "https://i.imgur.com/rICqdMu.jpg",
       "dog": "https://i.imgur.com/rICqdMu.jpg"
+    },
+    {
+      "username": "Eustace",
+      "password": "eustace",
+      "id": 9,
+      "avatar": "https://i.imgur.com/sQwhLJ7.jpg",
+      "dog": "https://i.imgur.com/sQwhLJ7.jpg"
+    },
+    {
+      "username": "Jeremiah",
+      "password": "jeremiah",
+      "id": 10,
+      "avatar": "https://i.imgur.com/5GZL2xI.jpg",
+      "dog": "https://i.imgur.com/5GZL2xI.jpg"
+    },
+    {
+      "username": "Madi",
+      "password": "Madi",
+      "id": 11,
+      "avatar": "https://i.imgur.com/WEO2JS5.jpg",
+      "dog": "https://i.imgur.com/WEO2JS5.jpg"
+    },
+    {
+      "username": "Tanner",
+      "password": "tanner",
+      "id": 12,
+      "avatar": "https://i.imgur.com/hQrIf8b.jpg",
+      "dog": "https://i.imgur.com/hQrIf8b.jpg"
+    },
+    {
+      "username": "Kim",
+      "password": "kim",
+      "id": 13,
+      "avatar": "https://i.imgur.com/4IAh0SW.jpg",
+      "dog": "https://i.imgur.com/4IAh0SW.jpg"
+    },
+    {
+      "username": "Doug",
+      "password": "doug",
+      "id": 14,
+      "avatar": "https://i.imgur.com/z70lRky.jpg",
+      "dog": "https://i.imgur.com/z70lRky.jpg"
+    },
+    {
+      "username": "Norm",
+      "password": "norm",
+      "id": 15,
+      "avatar": "https://i.imgur.com/TaJ99E8.jpg",
+      "dog": "https://i.imgur.com/TaJ99E8.jpg"
+    },
+    {
+      "username": "Mickey",
+      "password": "mickey",
+      "id": 16,
+      "avatar": "https://i.imgur.com/VmBMo5k.jpg",
+      "dog": "https://i.imgur.com/VmBMo5k.jpg"
+    },
+    {
+      "username": "Steve",
+      "password": "steve",
+      "id": 17,
+      "avatar": "https://i.imgur.com/vv5hegr.jpg",
+      "dog": "https://i.imgur.com/vv5hegr.jpg"
+    },
+    {
+      "username": "John",
+      "password": "john",
+      "id": 18,
+      "avatar": "https://i.imgur.com/PYn3eBh.jpg",
+      "dog": "https://i.imgur.com/PYn3eBh.jpg"
+    },
+    {
+      "username": "Charlie",
+      "password": "charlie",
+      "id": 19,
+      "avatar": "https://i.imgur.com/JWNkGNR.jpg",
+      "dog": "https://i.imgur.com/JWNkGNR.jpg"
+    },
+    {
+      "username": "Arnold",
+      "password": "arnold",
+      "id": 20,
+      "avatar": "https://i.imgur.com/UVE08fB.jpg",
+      "dog": "https://i.imgur.com/UVE08fB.jpg"
+    },
+    {
+      "username": "Ed",
+      "password": "ed",
+      "id": 21,
+      "avatar": "https://i.imgur.com/JiM5zXn.jpg",
+      "dog": "https://i.imgur.com/JiM5zXn.jpg"
+    },
+    {
+      "username": "Kagome",
+      "password": "kagome",
+      "id": 22,
+      "avatar": "https://i.imgur.com/DkWtk93.jpg",
+      "dog": "https://i.imgur.com/DkWtk93.jpg"
+    },
+    {
+      "username": "MrMertle",
+      "password": "mertle",
+      "id": 23,
+      "avatar": "https://i.imgur.com/6odm6QA.jpg",
+      "dog": "https://i.imgur.com/6odm6QA.jpg"
+    },
+    {
+      "username": "Rosey",
+      "password": "rosey",
+      "id": 24,
+      "avatar": "https://i.imgur.com/iFB8oW8.jpg",
+      "dog": "https://i.imgur.com/iFB8oW8.jpg"
     }
   ],
   "matches": [
@@ -190,11 +302,130 @@
       "id": 6
     },
     {
-      "name": "Hannah Montana",
+      "name": "Marcy",
       "owner": "Elyse",
       "ownerId": 3,
-      "picture": "https://imgur.com/jMgqWNX.jpg",
+      "picture": "https://i.imgur.com/QalfdOT.jpg",
       "id": 7
+    },
+    {
+      "name": "Courage",
+      "owner": "Eustace",
+      "ownerId": 9,
+      "picture": "https://i.imgur.com/QalfdOT.jpg",
+      "id": 8
+    },
+    {
+      "name": "Cam",
+      "owner": "Michael",
+      "ownerId": 5,
+      "picture": "https://i.imgur.com/IuCEUoE.jpg",
+      "id": 9
+    },
+    {
+      "name": "Sapphire",
+      "owner": "Jeremiah",
+      "ownerId": 10,
+      "picture": "https://i.imgur.com/5GZL2xI.jpg",
+      "id": 10
+    },
+    {
+      "name": "Vera",
+      "owner": "Madi",
+      "ownerId": 11,
+      "picture": "https://i.imgur.com/WEO2JS5.jpg",
+      "id": 11
+    },
+    {
+      "name": "Kyra",
+      "owner": "Tanner",
+      "ownerId": 12,
+      "picture": "https://i.imgur.com/hQrIf8b.jpg",
+      "id": 12
+    },
+    {
+      "name": "Scooter",
+      "owner": "Kim",
+      "ownerId": 13,
+      "picture": "https://i.imgur.com/4IAh0SW.jpg",
+      "id": 13
+    },
+    {
+      "name": "Porkchop",
+      "owner": "Kim",
+      "ownerId": 14,
+      "picture": "https://i.imgur.com/z70lRky.jpg",
+      "id": 14
+    },
+    {
+      "name": "Air Bud",
+      "owner": "Norm",
+      "ownerId": 15,
+      "picture": "https://i.imgur.com/TaJ99E8.jpg",
+      "id": 15
+    },
+    {
+      "name": "Pluto",
+      "owner": "Mickey",
+      "ownerId": 16,
+      "picture": "https://i.imgur.com/VmBMo5k.jpg",
+      "id": 16
+    },
+    {
+      "name": "Blue",
+      "owner": "Steve",
+      "ownerId": 17,
+      "picture": "https://i.imgur.com/vv5hegr.jpg",
+      "id": 17
+    },
+    {
+      "name": "Odie",
+      "owner": "John",
+      "ownerId": 18,
+      "picture": "https://i.imgur.com/PYn3eBh.jpg",
+      "id": 18
+    },
+    {
+      "name": "Snoopy",
+      "owner": "Charlie",
+      "ownerId": 19,
+      "picture": "https://i.imgur.com/JWNkGNR.jpg",
+      "id": 19
+    },
+    {
+      "name": "Abner",
+      "owner": "Arnold",
+      "ownerId": 20,
+      "picture": "https://i.imgur.com/UVE08fB.jpg",
+      "id": 20
+    },
+    {
+      "name": "Ein",
+      "owner": "Ed",
+      "ownerId": 21,
+      "picture": "https://i.imgur.com/JiM5zXn.jpg",
+      "id": 21
+    },
+    {
+      "name": "Nyssa",
+      "owner": "Rosey",
+      "ownerId": 24,
+      "picture": "https://i.imgur.com/iFB8oW8.jpg",
+      "id": 22
+    },
+    {
+      "name": "Inuyasha",
+      "owner": "Kagome",
+      "ownerId": 22,
+      "picture": "https://i.imgur.com/DkWtk93.jpg",
+      "id": 23
+    },
+    {
+      "name": "Beast",
+      "owner": "MrMertle",
+      "ownerId": 23,
+      "picture": "https://i.imgur.com/6odm6QA.jpg",
+      "id": 24
     }
   ],
   "parks": []
