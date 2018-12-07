@@ -5,168 +5,192 @@
       "password": "ousama",
       "id": 1,
       "avatar": "https://i.imgur.com/DQk9EkN.jpg",
-      "dog": "https://i.imgur.com/DQk9EkN.jpg"
+      "dog": "https://i.imgur.com/DQk9EkN.jpg",
+      "dogName": "Olive"
     },
     {
       "username": "Brendan",
       "password": "brendan",
       "id": 2,
       "avatar": "https://i.imgur.com/lAuzYVi.jpg",
-      "dog": "https://i.imgur.com/lAuzYVi.jpg"
+      "dog": "https://i.imgur.com/lAuzYVi.jpg",
+      "dogName": "Kiwi"
     },
     {
       "username": "Elyse",
       "password": "elyse",
       "id": 3,
       "avatar": "https://i.imgur.com/QalfdOT.jpg",
-      "dog": "https://i.imgur.com/QalfdOT.jpg"
+      "dog": "https://i.imgur.com/QalfdOT.jpg",
+      "dogName": "Marcy"
     },
     {
       "username": "Zac",
       "password": "zac",
       "id": 4,
       "avatar": "https://i.imgur.com/4ZvKt3v.png",
-      "dog": "https://i.imgur.com/4ZvKt3v.png"
+      "dog": "https://i.imgur.com/4ZvKt3v.png",
+      "dogName": "Billy"
     },
     {
       "username": "Michael",
       "password": "michael",
       "id": 5,
       "avatar": "https://i.imgur.com/IuCEUoE.jpg",
-      "dog": "https://i.imgur.com/IuCEUoE.jpg"
+      "dog": "https://i.imgur.com/IuCEUoE.jpg",
+      "dogName": "Cam"
     },
     {
       "username": "Joe",
       "password": "joe",
       "id": 6,
       "avatar": "https://i.imgur.com/K4eEdil.jpg",
-      "dog": "https://i.imgur.com/K4eEdil.jpg"
+      "dog": "https://i.imgur.com/K4eEdil.jpg",
+      "dogName": "Murph"
     },
     {
       "username": "Samuel",
       "password": "samuel",
       "id": 7,
       "avatar": "https://i.imgur.com/p4dU5jQ.jpg",
-      "dog": "https://i.imgur.com/p4dU5jQ.jpg"
+      "dog": "https://i.imgur.com/p4dU5jQ.jpg",
+      "dogName": "Oshie"
     },
     {
       "username": "Jessica",
       "password": "jessica",
       "id": 8,
       "avatar": "https://i.imgur.com/rICqdMu.jpg",
-      "dog": "https://i.imgur.com/rICqdMu.jpg"
+      "dog": "https://i.imgur.com/rICqdMu.jpg",
+      "dogName": "Wally"
     },
     {
       "username": "Eustace",
       "password": "eustace",
       "id": 9,
       "avatar": "https://i.imgur.com/sQwhLJ7.jpg",
-      "dog": "https://i.imgur.com/sQwhLJ7.jpg"
+      "dog": "https://i.imgur.com/sQwhLJ7.jpg",
+      "dogName": "Courage"
     },
     {
       "username": "Jeremiah",
       "password": "jeremiah",
       "id": 10,
       "avatar": "https://i.imgur.com/5GZL2xI.jpg",
-      "dog": "https://i.imgur.com/5GZL2xI.jpg"
+      "dog": "https://i.imgur.com/5GZL2xI.jpg",
+      "dogName": "Sapphie"
     },
     {
       "username": "Madi",
       "password": "Madi",
       "id": 11,
       "avatar": "https://i.imgur.com/WEO2JS5.jpg",
-      "dog": "https://i.imgur.com/WEO2JS5.jpg"
+      "dog": "https://i.imgur.com/WEO2JS5.jpg",
+      "dogName": "Vera"
     },
     {
       "username": "Tanner",
       "password": "tanner",
       "id": 12,
       "avatar": "https://i.imgur.com/hQrIf8b.jpg",
-      "dog": "https://i.imgur.com/hQrIf8b.jpg"
+      "dog": "https://i.imgur.com/hQrIf8b.jpg",
+      "dogName": "Kyra"
     },
     {
       "username": "Kim",
       "password": "kim",
       "id": 13,
       "avatar": "https://i.imgur.com/4IAh0SW.jpg",
-      "dog": "https://i.imgur.com/4IAh0SW.jpg"
+      "dog": "https://i.imgur.com/4IAh0SW.jpg",
+      "dogName": "Courage"
     },
     {
       "username": "Doug",
       "password": "doug",
       "id": 14,
       "avatar": "https://i.imgur.com/z70lRky.jpg",
-      "dog": "https://i.imgur.com/z70lRky.jpg"
+      "dog": "https://i.imgur.com/z70lRky.jpg",
+      "dogName": "Porkchop"
     },
     {
       "username": "Norm",
       "password": "norm",
       "id": 15,
       "avatar": "https://i.imgur.com/TaJ99E8.jpg",
-      "dog": "https://i.imgur.com/TaJ99E8.jpg"
+      "dog": "https://i.imgur.com/TaJ99E8.jpg",
+      "dogName": "Air Bud"
     },
     {
       "username": "Mickey",
       "password": "mickey",
       "id": 16,
       "avatar": "https://i.imgur.com/VmBMo5k.jpg",
-      "dog": "https://i.imgur.com/VmBMo5k.jpg"
+      "dog": "https://i.imgur.com/VmBMo5k.jpg",
+      "dogName": "Pluto"
     },
     {
       "username": "Steve",
       "password": "steve",
       "id": 17,
       "avatar": "https://i.imgur.com/vv5hegr.jpg",
-      "dog": "https://i.imgur.com/vv5hegr.jpg"
+      "dog": "https://i.imgur.com/vv5hegr.jpg",
+      "dogName": "Blue"
     },
     {
       "username": "John",
       "password": "john",
       "id": 18,
       "avatar": "https://i.imgur.com/PYn3eBh.jpg",
-      "dog": "https://i.imgur.com/PYn3eBh.jpg"
+      "dog": "https://i.imgur.com/PYn3eBh.jpg",
+      "dogName": "Odie"
     },
     {
       "username": "Charlie",
       "password": "charlie",
       "id": 19,
-      "avatar": "https://i.imgur.com/JWNkGNR.jpg",
-      "dog": "https://i.imgur.com/JWNkGNR.jpg"
+      "avatar": "https://i.imgur.com/4PKM5jF.png",
+      "dog": "https://i.imgur.com/4PKM5jF.png",
+      "dogName": "Snoopy"
     },
     {
       "username": "Arnold",
       "password": "arnold",
       "id": 20,
       "avatar": "https://i.imgur.com/UVE08fB.jpg",
-      "dog": "https://i.imgur.com/UVE08fB.jpg"
+      "dog": "https://i.imgur.com/UVE08fB.jpg",
+      "dogName": "Abner"
     },
     {
       "username": "Ed",
       "password": "ed",
       "id": 21,
       "avatar": "https://i.imgur.com/JiM5zXn.jpg",
-      "dog": "https://i.imgur.com/JiM5zXn.jpg"
+      "dog": "https://i.imgur.com/JiM5zXn.jpg",
+      "dogName": "Ein"
     },
     {
       "username": "Kagome",
       "password": "kagome",
       "id": 22,
       "avatar": "https://i.imgur.com/DkWtk93.jpg",
-      "dog": "https://i.imgur.com/DkWtk93.jpg"
+      "dog": "https://i.imgur.com/DkWtk93.jpg",
+      "dogName": "Inuyasha"
     },
     {
       "username": "MrMertle",
       "password": "mertle",
       "id": 23,
       "avatar": "https://i.imgur.com/6odm6QA.jpg",
-      "dog": "https://i.imgur.com/6odm6QA.jpg"
+      "dog": "https://i.imgur.com/6odm6QA.jpg",
+      "dogName": "Beast"
     },
     {
       "username": "Rosey",
       "password": "rosey",
       "id": 24,
       "avatar": "https://i.imgur.com/iFB8oW8.jpg",
-      "dog": "https://i.imgur.com/iFB8oW8.jpg"
+      "dog": "https://i.imgur.com/iFB8oW8.jpg",
+      "dogName": "Nyssa"
     }
   ],
   "matches": [
@@ -312,7 +336,7 @@
       "name": "Courage",
       "owner": "Eustace",
       "ownerId": 9,
-      "picture": "https://i.imgur.com/QalfdOT.jpg",
+      "picture": "https://i.imgur.com/sQwhLJ7.jpg",
       "id": 8
     },
     {
@@ -389,7 +413,7 @@
       "name": "Snoopy",
       "owner": "Charlie",
       "ownerId": 19,
-      "picture": "https://i.imgur.com/JWNkGNR.jpg",
+      "picture": "https://i.imgur.com/4PKM5jF.png",
       "id": 19
     },
     {

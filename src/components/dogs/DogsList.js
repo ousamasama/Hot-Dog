@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Image } from 'semantic-ui-react'
+import { Button, Image, Grid } from 'semantic-ui-react'
 import DogsCard from "./DogsCard"
 import MatchedDogsCard from "./LikedDogsCard"
 import "./DogsCard.css"
@@ -17,8 +17,8 @@ export default class DogsList extends Component {
             return match.matchname
         })
         return (
-            <React.Fragment>
-                <section className="matchesContainer">
+            <Grid columns={3} divided="vertically" className="matchesContainer">
+                <Grid.Row>
                     {
                         this.props.dogs.map(dog => {
                             if (!myMatchesUserNames.includes(dog.owner) && dog.owner !== currentUser) {
@@ -30,8 +30,8 @@ export default class DogsList extends Component {
                             }
                         })
                     }
-                </section>
-            </React.Fragment>
+                </Grid.Row>
+            </Grid>
         )
     }
     return
