@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Image } from 'semantic-ui-react'
 import DogsCard from "./DogsCard"
-import MatchedDogsCard from "./MatchedDogsCard"
+import MatchedDogsCard from "./LikedDogsCard"
 import "./DogsCard.css"
 
 export default class DogsList extends Component {

@@ -14,8 +14,14 @@ class LikesManager extends APIManager {
   myLikes() {
     return fetch(`http://localhost:5002/likes?likedByUserId=${currentUserIdParsed}`).then(data => data.json())
   }
-  removeAndList(oldMatch, user) {
-    return this.delete(oldMatch, user).then(() => this.all())
+  usersLikes(userId) {
+    return fetch(`http://localhost:5002/likes?likedUserId=${currentUserIdParsed}&likedByUserId=${userId}`).then(data => data.json())
+  }
+  likesUser(userId) {
+    return fetch(`http://localhost:5002/likes?likedByUserId=${currentUserIdParsed}&likedUserId=${userId}`).then(data => data.json())
+  }
+  unlike(id) {
+    return this.delete(id).then(() => this.all())
   }
   addAndList(yourId, theirId) {
     let myNewLike = {

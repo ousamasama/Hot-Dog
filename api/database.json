@@ -92,6 +92,34 @@
       "userId": 3,
       "friendId": 1,
       "id": 5
+    },
+    {
+      "matchname": "Joe",
+      "username": "Ousama",
+      "userId": 1,
+      "friendId": 6,
+      "id": 6
+    },
+    {
+      "matchname": "Ousama",
+      "username": "Joe",
+      "userId": 6,
+      "friendId": 1,
+      "id": 7
+    },
+    {
+      "matchname": "Jessica",
+      "username": "Ousama",
+      "userId": 1,
+      "friendId": 8,
+      "id": 8
+    },
+    {
+      "matchname": "Ousama",
+      "username": "Jessica",
+      "userId": 8,
+      "friendId": 1,
+      "id": 9
     }
   ],
   "likes": [
@@ -104,6 +132,26 @@
       "likedUserId": 1,
       "likedByUserId": 2,
       "id": 2
+    },
+    {
+      "likedUserId": 6,
+      "likedByUserId": 1,
+      "id": 3
+    },
+    {
+      "likedUserId": 1,
+      "likedByUserId": 6,
+      "id": 4
+    },
+    {
+      "likedUserId": 8,
+      "likedByUserId": 1,
+      "id": 5
+    },
+    {
+      "likedUserId": 1,
+      "likedByUserId": 8,
+      "id": 6
     }
   ],
   "messages": [

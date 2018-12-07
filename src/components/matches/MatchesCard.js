@@ -12,6 +12,8 @@ export default class MatchesCard extends Component {
 
   render() {
     let currentUser = sessionStorage.getItem("username");
+    let currentUserId = sessionStorage.getItem("userID");
+    let currentUserIdParsed = Number(currentUserId)
     let myMatchesUserIds = this.props.matches
       .filter(match => {
         if (match.username === currentUser) {
@@ -28,9 +30,35 @@ export default class MatchesCard extends Component {
       if (thisMatch.matchname === this.props.user.username) {
         thisSpecificMatch = thisMatch.id;
       }
-    });
-
-
+    })
+    //list of logged in user's matches
+    // let unmatchId = this.props.matches.map(match => {
+    //   if (match.username === currentUser) {
+    //     console.log("logged in user's matches", match, match.id)
+    //     return match.id
+    //   }
+    // })
+    //use a find next time
+    //list of matched to logged in user
+    // let getUnmatchedId = this.props.matches.map(match => {
+    //   if (match.matchname === currentUser) {
+    //     console.log("matched to logged in user's details", match, match.id)
+    //     return match.id
+    //   }
+    // })
+    //list of logged in user's likes
+    // let unlikeId = this.props.myLikes.map(like => {
+    //   if (like.likedByUserId === currentUserIdParsed) {
+    //     console.log("logged in user's like details", like, like.id)
+    //     return like.id
+    //   }
+    // })
+    //list of likes for logged in user
+    // let getUnlikedId = this.props.likedMes.map(like => {
+    //   if (like.likedUserId === currentUserIdParsed)
+    //     console.log("likes for logged in user ", like, like.id)
+    //   return like.id
+    // })
     const { open, dimmer } = this.state;
     return (
       <React.Fragment>
@@ -48,8 +76,36 @@ export default class MatchesCard extends Component {
               <Button
                 size="tiny"
                 color="red"
-                onClick={() =>
-                  this.props.unmatch(thisSpecificMatch, currentUser)
+                onClick={() => {
+                  this.props.theirLikesForMe(this.props.user.id).then(theirLikesForMe => {
+                    this.props.myLikesForThem(this.props.user.id).then(myLikesForThem => {
+                      // return myLikesForThem
+                      this.props.theirMatchesForMe(this.props.user.id).then(theirMatchesForMe => {
+                        this.props.myMatchesForThem(this.props.user.id).then(myMatchesForThem => {
+                          // this.props.unlike(myLikesForThem[0].id)
+                          // this.props.unmatch(theirMatchesForMe[0].id)
+                          // this.props.unlike(theirLikesForMe[0].id)
+                          // this.props.unmatch(myMatchesForThem[0].id)
+                          Promise.all(
+                            [
+                              this.props.unlike(myLikesForThem[0].id),
+                              this.props.unmatch(theirMatchesForMe[0].id),
+                              this.props.unlike(theirLikesForMe[0].id),
+                              this.props.unmatch(myMatchesForThem[0].id)
+                            ]
+                          ).then()
+                          // return myLikesForThem
+                        });
+                        // return myLikesForThem
+                      });
+                    });
+                  });
+
+                  // this.props.unmatch(unmatchId)
+                  // this.props.unlike(unlikeId)
+                  // this.props.getUnliked(getUnlikedId)
+                  // this.props.getUnmatched(getUnmatchedId)
+                }
                 }
                 className="card-link"
               >

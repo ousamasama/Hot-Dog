@@ -86,13 +86,38 @@ export default class ApplicationViews extends Component {
 
     isAuthenticated = () => sessionStorage.getItem("username") !== null
 
-    // unmatch = id => {
-    //     return MatchesManager.removeAndList(id).then(matches =>
-    //         this.setState({
-    //             matches: matches
-    //         })
-    //     );
-    // };
+    theirLikesForMe = (theirId) => {
+        return LikesManager.usersLikes(theirId)
+    };
+
+    myLikesForThem = (myId) => {
+        return LikesManager.likesUser(myId);
+    };
+
+    theirMatchesForMe = (theirId) => {
+        return MatchesManager.usersMatches(theirId)
+    };
+
+    myMatchesForThem = (myId) => {
+        return MatchesManager.matchedUser(myId);
+    };
+
+    unmatch = (id) => {
+        return MatchesManager.unmatch(id).then(matches =>
+            this.setState({
+                matches: matches
+            })
+        );
+    };
+
+    unlike = (id) => {
+        return LikesManager.unlike(id).then(matches =>
+            this.setState({
+                matches: matches
+            })
+        );
+    };
+
 
     match = (myNewMatch, myUsername, myId, theirId) =>
         MatchesManager.addAndList(myNewMatch, myUsername, myId, theirId).then(() => MatchesManager.all())
@@ -114,6 +139,9 @@ export default class ApplicationViews extends Component {
 
     render() {
         if (this.state.initialized) {
+            console.log(this.state.matches)
+            console.log(this.state.myLikes)
+            console.log(this.state.likedMes)
             return (
                 <React.Fragment>
                     <Route exact path="/randomdog" render={(props) => {
@@ -133,7 +161,14 @@ export default class ApplicationViews extends Component {
                                 // likes={this.state.likes}
                                 myLikes={this.state.myLikes}
                                 likedMes={this.state.likedMes}
-                            // unmatch={this.unmatch} 
+                                // getUnmatched={this.getUnmatched}
+                                // getUnliked={this.getUnliked}
+                                unmatch={this.unmatch}
+                                unlike={this.unlike}
+                                theirLikesForMe={this.theirLikesForMe}
+                                myLikesForThem={this.myLikesForThem}
+                                theirMatchesForMe={this.theirMatchesForMe}
+                                myMatchesForThem={this.myMatchesForThem}
                             />
                         } else {
                             return <Redirect to="/login" />

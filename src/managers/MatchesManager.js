@@ -1,5 +1,6 @@
 import APIManager from "./APIManager"
-
+let currentUserId = sessionStorage.getItem("userID");
+let currentUserIdParsed = Number(currentUserId)
 class MatchesManager extends APIManager {
   getUser(id) {
     return this.get(id)
@@ -7,8 +8,17 @@ class MatchesManager extends APIManager {
   getAll() {
     return this.all()
   }
-  removeAndList(oldMatch, user) {
-    return this.delete(oldMatch, user).then(() => this.all())
+  // removeAndList(unmatchId, getUnmatchedId) {
+  //   return this.delete(unmatchId, getUnmatchedId).then(() => this.all())
+  // }
+  unmatch(id) {
+    return this.delete(id).then(() => this.all())
+  }
+  usersMatches(userId) {
+    return fetch(`http://localhost:5002/matches?userId=${currentUserIdParsed}&friendId=${userId}`).then(data => data.json())
+  }
+  matchedUser(userId) {
+    return fetch(`http://localhost:5002/matches?friendId=${currentUserIdParsed}&userId=${userId}`).then(data => data.json())
   }
   addAndList(newMatch, user, userId, friendId, likedBy) {
     let myNewMatch = {
