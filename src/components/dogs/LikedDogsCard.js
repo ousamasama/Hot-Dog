@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Image, Header, Modal, Card } from "semantic-ui-react";
+import { Button, Image, Header, Modal, Card, Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./DogsCard.css"
 
@@ -33,7 +33,7 @@ export default class LikedDogsCard extends Component {
 
         const { open, dimmer } = this.state;
         return (
-            <React.Fragment>
+            <Grid.Column>
                 <Card.Group className="likedCard">
                     <Card color='green' key={this.props.dog.id} className="card">
                         <h5 className="card-title">
@@ -87,7 +87,7 @@ export default class LikedDogsCard extends Component {
                         </h5>
                     </Card>
                 </Card.Group>
-            </React.Fragment>
+            </Grid.Column>
         );
     }
 }

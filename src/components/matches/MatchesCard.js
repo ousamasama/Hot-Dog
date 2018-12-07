@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Image, Header, Modal, Card } from "semantic-ui-react";
+import { Button, Image, Header, Modal, Card, Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 // import "./UsersCard.css"
 // import "./Friends.css";
@@ -61,7 +61,7 @@ export default class MatchesCard extends Component {
     // })
     const { open, dimmer } = this.state;
     return (
-      <React.Fragment>
+      <Grid.Column>
         <Card.Group className="friendsCard">
           <Card color='green' key={this.props.user.id} className="card">
             <h5 className="card-title">
@@ -71,7 +71,7 @@ export default class MatchesCard extends Component {
                 src={this.props.user.dog}
               />
 
-              <Card.Header>{this.props.user.username}</Card.Header>
+              <Card.Header>{this.props.user.username}'s Dog {this.props.user.dogName}</Card.Header>
               <Card.Meta>You matched!</Card.Meta>
               <Button
                 size="tiny"
@@ -151,7 +151,7 @@ export default class MatchesCard extends Component {
             </h5>
           </Card>
         </Card.Group>
-      </React.Fragment>
+      </Grid.Column>
     );
   }
 }
