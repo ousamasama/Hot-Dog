@@ -92,6 +92,20 @@
       "userId": 3,
       "friendId": 1,
       "id": 5
+    },
+    {
+      "matchname": "Joe",
+      "username": "Ousama",
+      "userId": 1,
+      "friendId": 6,
+      "id": 6
+    },
+    {
+      "matchname": "Ousama",
+      "username": "Joe",
+      "userId": 6,
+      "friendId": 1,
+      "id": 7
     }
   ],
   "likes": [
@@ -104,6 +118,16 @@
       "likedUserId": 1,
       "likedByUserId": 2,
       "id": 2
+    },
+    {
+      "likedUserId": 6,
+      "likedByUserId": 1,
+      "id": 3
+    },
+    {
+      "likedUserId": 1,
+      "likedByUserId": 6,
+      "id": 4
     }
   ],
   "messages": [

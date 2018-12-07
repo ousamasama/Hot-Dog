@@ -53,7 +53,7 @@ export default class DogsCard extends Component {
                                 content="Match Me?"
                                 icon="heart"
                                 onClick={
-                                    () => {this.props.match(this.props.dog.owner, currentUser, currentUserId, this.props.dog.ownerId)
+                                    () => {this.props.match(this.props.dog.owner, currentUser, currentUserIdParsed, this.props.dog.ownerId)
                                      this.props.like(this.props.dog.ownerId, currentUserIdParsed)}
                                     // .then(() => this.props.history.push("/matches"))
                                 }

@@ -18,8 +18,6 @@ export default class MatchesList extends Component {
         }).map(match => {
             return match.matchname
         })
-        console.log(this.props.myLikes)
-        console.log(this.props.likedMes)
         let myLikes = this.props.myLikes.filter(like => {
             if(like.likedByUserId === currentUserIdParsed) {
                 return true
@@ -27,26 +25,30 @@ export default class MatchesList extends Component {
                 return false
             }
         }).map(like => {
-            console.log("myLikes", like)
             return like.likedUserId
         })
-        // let likedMes = this.props.likedMes.filter(like => {
-        //     if(like.likedUserId !== currentUserIdParsed) {
-        //         return true
-        //     } else {
-        //         return false
-        //     }
-        //     }).map(like => {
-        //         console.log("likedMes", like)
-        //         return like.likedByUserId 
-        //     })
         return (
             <React.Fragment>
                 <section className="matchesContainer">
                     {
                         this.props.users.map(user => {
                             if (myMatchesUserNames.includes(user.username) && myLikes.includes(user.id)) {
-                                return <MatchesCard key={user.id} user={user} myMatchesUserNames={myMatchesUserNames} unmatch={this.props.unmatch}{...this.props} />
+                                return <MatchesCard 
+                                key={user.id} 
+                                user={user} 
+                                myLikes={this.props.myLikes} 
+                                likedMes={this.props.likedMes} 
+                                matches={this.props.matches} 
+                                myMatchesUserNames={myMatchesUserNames} 
+                                unmatch={this.props.unmatch} 
+                                unlike={this.props.unlike}
+                                // getUnmatched={this.props.getUnmatched}
+                                // getUnliked={this.props.getUnliked}
+                                theirLikesForMe={this.props.theirLikesForMe}
+                                myLikesForThem={this.props.myLikesForThem}
+                                theirMatchesForMe={this.props.theirMatchesForMe}
+                                myMatchesForThem={this.props.myMatchesForThem}
+                                {...this.props} />
                             // } else if (user.username !== currentUser) {
                             //     return <UsersCard key={user.id} user={user} myMatchesUserNames={myMatchesUserNames} addFriend={this.props.addFriend} {...this.props} />
                             } else {
