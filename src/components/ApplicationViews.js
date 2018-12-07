@@ -111,9 +111,9 @@ export default class ApplicationViews extends Component {
     };
 
     unlike = (id) => {
-        return LikesManager.unlike(id).then(matches =>
+        return LikesManager.unlike(id).then(likes =>
             this.setState({
-                matches: matches
+                likes: likes
             })
         );
     };
@@ -139,9 +139,6 @@ export default class ApplicationViews extends Component {
 
     render() {
         if (this.state.initialized) {
-            console.log(this.state.matches)
-            console.log(this.state.myLikes)
-            console.log(this.state.likedMes)
             return (
                 <React.Fragment>
                     <Route exact path="/randomdog" render={(props) => {
