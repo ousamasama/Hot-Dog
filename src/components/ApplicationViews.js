@@ -2,7 +2,6 @@ import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register"
-import UsersManager from "../managers/UsersManager";
 import MatchesList from "./matches/MatchesList";
 import MatchesManager from "../managers/MatchesManager";
 import LikesManager from "../managers/LikesManager";
@@ -10,6 +9,9 @@ import RandomDog from "../randomdog/RandomDog";
 import DogsList from "./dogs/DogsList"
 import DogsDetail from "./dogs/DogsDetail"
 import DogsManager from "../managers/DogsManager";
+import UsersList from "./users/UsersList"
+import UsersEdit from "./users/UsersEdit"
+import UsersManager from "../managers/UsersManager";
 import APIManager from "../managers/APIManager";
 
 export default class ApplicationViews extends Component {
@@ -135,6 +137,22 @@ export default class ApplicationViews extends Component {
                 })
             )
 
+    editUsers = (users, url) =>
+        UsersManager.patchAndListUsers(users, url).then(() => UsersManager.getAll())
+            .then(users =>
+                this.setState({
+                    users: users
+                })
+            );
+            
+    editDogs = (dogs, url) =>
+        DogsManager.patchAndListDogs(dogs, url).then(() => DogsManager.getAll())
+            .then(dogs =>
+                this.setState({
+                    dogs: dogs
+                })
+            );
+
 
 
     render() {
@@ -171,6 +189,27 @@ export default class ApplicationViews extends Component {
                             return <Redirect to="/login" />
                         }
                     }} />
+                    <Route exact path="/profile" render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <UsersList {...props}
+                                users={this.state.users}
+                                dogs={this.state.dogs} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }} />
+                    <Route path="/users/edit/:userId(\d+)"
+                        render={props => {
+                            if (this.isAuthenticated()) {
+                                return <UsersEdit {...props}
+                                    users={this.state.users}
+                                    dogs={this.state.dogs}
+                                    editDogs={this.editDogs}
+                                    editUsers={this.editUsers} />
+                            } else {
+                                return <Redirect to="/login" />
+                            }
+                        }} />
                     <Route exact path="/dogs" render={(props) => {
                         if (this.isAuthenticated()) {
                             return <DogsList {...props}

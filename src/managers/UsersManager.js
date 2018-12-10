@@ -1,6 +1,9 @@
 import APIManager from "./APIManager"
 
 class UserManager extends APIManager {
+  addUser(id) {
+    return this.post(id)
+  }
   getUser(id) {
     return this.get(id)
   }
@@ -10,15 +13,18 @@ class UserManager extends APIManager {
   removeAndList(id) {
     return this.delete(id).then(() => this.all())
   }
-  post(newUser) {
-    return fetch("http://localhost:5002/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newUser)
-    }).then(data => data.json())
+  patchAndListUsers(payload, url) {
+    return this.patch(payload, url).then(() => this.allSortedFurthest())
   }
+  // post(newUser) {
+  //   return fetch("http://localhost:5002/users", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(newUser)
+  //   }).then(data => data.json())
+  // }
 }
 
 export default new UserManager("users")
