@@ -13,6 +13,9 @@ class UserManager extends APIManager {
   removeAndList(id) {
     return this.delete(id).then(() => this.all())
   }
+  deleteProfile(id) {
+    return this.delete(id).then(() => this.all())
+  }
   patchAndListUsers(payload, url) {
     return this.patch(payload, url).then(() => this.allSortedFurthest())
   }

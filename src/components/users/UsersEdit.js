@@ -24,7 +24,6 @@ class UsersEdit extends Component {
         let newState = {}
         // Error here
         let user = this.props.users.find(user => user.id === parseInt(this.props.match.params.userId))
-        console.log(user)
         newState.username = user.username
         newState.password = user.password
         newState.dogName = user.dogName
@@ -60,17 +59,6 @@ class UsersEdit extends Component {
             avatar: this.state.dog,
             id: this.state.id
         }
-        // let myDog = this.props.dogs.filter(dog => {
-        //     if (dog.ownerId === currentUserIdParsed) {
-        //         return true
-        //     } else {
-        //         return false
-        //     }
-        // }).map(dog => {
-        //     console.log("dog", dog)
-        //     return dog
-        // })
-        // console.log("mydog", myDog)
         let userUrl = "http://localhost:5002/users/"
         let dogsUrl = "http://localhost:5002/dogs/"
         let myDog = this.props.dogs.filter(dog => {
@@ -80,10 +68,8 @@ class UsersEdit extends Component {
                 return false
             }
         }).map(dog => {
-            console.log("dog", dog)
             return dog
         })
-        console.log("mydog", myDog[0])
         return this.props.editUsers(user, `${userUrl}${this.state.id}`).then(user => {
             let editedDog = {
                 name: this.state.dogName,
@@ -92,7 +78,6 @@ class UsersEdit extends Component {
                 picture: this.state.dog,
                 id: myDog[0].id
             }
-            console.log("edited dog", editedDog)
             return editedDog
         }).then(editedDog => this.props.editDogs(editedDog, `${dogsUrl}${myDog[0].id}`))
             .then(() => this.props.history.push("/profile"))
