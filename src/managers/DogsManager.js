@@ -1,6 +1,9 @@
 import APIManager from "./APIManager"
 
 class DogsManager extends APIManager {
+  addDog(id) {
+    return this.post(id)
+  }
   getUser(id) {
     return this.get(id)
   }
@@ -9,6 +12,9 @@ class DogsManager extends APIManager {
   }
   removeAndList(id) {
     return this.delete(id).then(() => this.all())
+  }
+  patchAndListDogs(payload, url) {
+    return this.patch(payload, url).then(() => this.allSortedFurthest())
   }
 //   post(newUser) {
 //     return fetch("http://localhost:5002/dogs", {

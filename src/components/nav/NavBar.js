@@ -45,9 +45,9 @@ export default class MenuExampleHeader extends Component {
         <React.Fragment>
           <Menu.Item
             as={Link}
-            to="/login"
+            to="/home"
             name={username}
-            active={activeItem === "login"}
+            active={activeItem === "home"}
             onClick={this.handleItemClick}
           />
           <Menu.Item as={Link} to="/home" name="logout" onClick={this.logout} />
@@ -57,11 +57,18 @@ export default class MenuExampleHeader extends Component {
 
     return (
       <Menu pointing>
-        <Menu.Item
+      <Menu.Item
           as={Link}
           to="/home"
           name="home"
           active={activeItem === "home"}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          as={Link}
+          to="/profile"
+          name="profile"
+          active={activeItem === "profile"}
           onClick={this.handleItemClick}
         />
         <Menu.Item
@@ -71,11 +78,18 @@ export default class MenuExampleHeader extends Component {
           active={activeItem === "dogs"}
           onClick={this.handleItemClick}
         />
-        <Menu.Item
+        {/* <Menu.Item
           as={Link}
           to="/randomdog"
           name="Random Dog"
           active={activeItem === "randomdog"}
+          onClick={this.handleItemClick}
+        /> */}
+        <Menu.Item
+          as={Link}
+          to="/matches"
+          name="matches"
+          active={activeItem === "matches"}
           onClick={this.handleItemClick}
         />
         <Menu.Item
@@ -83,13 +97,6 @@ export default class MenuExampleHeader extends Component {
           to="/messages"
           name="messages"
           active={activeItem === "messages"}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Item
-          as={Link}
-          to="/matches"
-          name="matches"
-          active={activeItem === "matches"}
           onClick={this.handleItemClick}
         />
         <Menu.Menu position="right">

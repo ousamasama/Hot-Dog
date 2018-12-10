@@ -71,7 +71,7 @@ export default class MatchesCard extends Component {
                 src={this.props.user.dog}
               />
 
-              <Card.Header>{this.props.user.username}'s Dog {this.props.user.dogName}</Card.Header>
+              <Card.Header>{this.props.user.dogName}, {this.props.user.username}'s Dog</Card.Header>
               <Card.Meta>You matched!</Card.Meta>
               <Button
                 size="tiny"

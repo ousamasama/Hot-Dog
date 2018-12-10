@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Form } from "semantic-ui-react";
 import UsersManager from "../../managers/UsersManager";
+import DogsManager from "../../managers/DogsManager";
 import { Link } from "react-router-dom";
 
 // shoutout to zac for crushing sessionstorage on our group project.
@@ -10,7 +11,10 @@ export default class Login extends Component {
     // Set initial state
     state = {
         username: "",
-        password: ""
+        password: "",
+        dogName: "",
+        avatar: "",
+        dog: ""
     };
 
     // Update state whenever an input field is edited
@@ -58,12 +62,25 @@ export default class Login extends Component {
             // create an object to be saved to database
             let toSave = {
                 username: this.state.username,
-                password: this.state.password
+                password: this.state.password,
+                dogName: this.state.dogName,
+                dog: this.state.dog,
+                avatar: this.state.dog
             };
 
+
             // post them to the database (object is stringified in UserManager)
-            UsersManager.post(toSave);
+            UsersManager.addUser(toSave).then(newUser => {
+                let newDog = {
+                    name: this.state.dogName,
+                    owner: this.state.username,
+                    ownerId: newUser.id,
+                    picture: this.state.dog
+                }
+                return newDog
+            }).then(newDog => DogsManager.addDog(newDog))
         }
+
         console.log(message);
         this.props.history.push("/home")
     };
@@ -90,6 +107,22 @@ export default class Login extends Component {
                         type="password"
                         id="password"
                         placeholder="desired password"
+                        required=""
+                    />
+                    <label htmlFor="newDogName">Dog Name</label>
+                    <Form.Input
+                        onChange={this.handleFieldChange}
+                        type="text"
+                        id="dogName"
+                        placeholder="your dog name"
+                        required=""
+                    />
+                    <label htmlFor="newDogPic">Dog Pic URL</label>
+                    <Form.Input
+                        onChange={this.handleFieldChange}
+                        type="url"
+                        id="dog"
+                        placeholder="url of dog pic"
                         required=""
                     />
                     <Button basic color="green" type="submit">
