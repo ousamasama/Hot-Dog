@@ -14,6 +14,55 @@ export default class UsersCard extends Component {
     let currentUser = sessionStorage.getItem("username");
     let currentUserId = sessionStorage.getItem("userID");
     let currentUserIdParsed = Number(currentUserId)
+    let myDog = this.props.dogs.filter(dog => {
+      if (dog.ownerId === currentUserIdParsed) {
+        return true
+      } else {
+        return false
+      }
+    }).map(dog => {
+      return dog
+    })
+    let myLikes = this.props.likes.filter(like => {
+      if (like.likedByUserId === currentUserIdParsed) {
+        return true
+      } else {
+        return false
+      }
+    }).map(like => {
+      return like
+    })
+    let theirLikes = this.props.likes.filter(like => {
+      if (like.likedUserId === currentUserIdParsed) {
+        return true
+      } else {
+        return false
+      }
+    }).map(like => {
+      return like
+    })
+    let myMatches = this.props.matches.filter(match => {
+      if (match.username === currentUser) {
+        return true
+      } else {
+        return false
+      }
+    }).map(match => {
+      return match
+    })
+    let theirMatches = this.props.matches.filter(match => {
+      if (match.matchname === currentUser) {
+        return true
+      } else {
+        return false
+      }
+    }).map(match => {
+      return match
+    })
+    console.log("my likes", myLikes)
+    console.log("their likes", theirLikes)
+    console.log("my matches", myMatches)
+    console.log("their matches", theirMatches)
     const { open, dimmer } = this.state;
     return (
       <React.Fragment>
@@ -25,35 +74,61 @@ export default class UsersCard extends Component {
                 size="mini"
                 src={this.props.user.dog}
               />
-                <Card.Meta>{this.props.user.username}</Card.Meta>
-                <Card.Meta>{this.props.user.dogName}</Card.Meta>
+              <Card.Meta>{this.props.user.username}</Card.Meta>
+              <Card.Meta>{this.props.user.dogName}</Card.Meta>
               <Card.Header>Your Profile</Card.Header>
-             
-              <Modal
-                dimmer={dimmer}
-                open={open}
-                onClose={this.close}
-                trigger={
-                    <Button as={Link} size="tiny" color="orange" className="card-link" to={`/users/edit/${this.props.user.id}`}>Edit</Button>
+              <Button as={Link} size="tiny" color="orange" className="card-link" to={`/users/edit/${this.props.user.id}`}>Edit</Button>
+              <Button
+              onClick={
+                ()=> {
+                  myLikes.forEach(like => {
+                    console.log("each of my likes", like)
+                  })
+  
+                  theirLikes.forEach(like => {
+                    console.log("each of their likes", like)
+                  })
+  
+                  myMatches.forEach(match => {
+                    console.log("each of my matches", match)
+                  })
+  
+                  theirMatches.forEach(match => {
+                    console.log("each of their matches", match)
+                  })
                 }
+              }
               >
-                <Modal.Header>Details</Modal.Header>
-                <Modal.Content image>
-                  <Image
-                    wrapped
-                    size="small"
-                    src={this.props.user.dog}
-                  />
-                  <Modal.Description>
-                    <Header>{this.props.user.username}</Header>
-                    <p>This person is your friend!</p>
-                    <Button size="tiny" color="purple" onClick={this.show(true)}>
-                    Edit
-                  </Button>
-                  </Modal.Description>
-                </Modal.Content>
-        
-              </Modal>
+                Test
+              </Button>
+              <Button
+                size="tiny"
+                color="red"
+                onClick={
+                  () => {
+                    myLikes.forEach(like => {
+                      this.props.unlike(like.id)
+                    })
+                    theirLikes.forEach(like => {
+                      this.props.unlike(like.id)
+                    })
+                    myMatches.forEach(match => {
+                      this.props.unmatch(match.id)
+                    })
+                    theirMatches.forEach(match => {
+                      this.props.unmatch(match.id)
+                    })
+                    this.props.deleteUsers(this.props.user.id)
+                    this.props.deleteDogs(myDog[0].id)
+                      .then(() => sessionStorage.clear())
+                      .then(() => this.props.history.push("/home"))
+                    console.log("Your profile has been deleted and you have been logged out. Return you to our home page.")
+                  }
+                }
+                className="card-link"
+              >
+                Delete Your Profile
+              </Button>
             </h5>
           </Card>
         </Card.Group>

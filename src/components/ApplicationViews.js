@@ -46,11 +46,11 @@ export default class ApplicationViews extends Component {
             });
         });
 
-        // let likesLoading = LikesManager.getAll().then(likes => {
-        //     this.setState({
-        //         likes: likes
-        //     });
-        // });
+        let likesLoading = LikesManager.getAll().then(likes => {
+            this.setState({
+                likes: likes
+            });
+        });
 
         let myLikesLoading = LikesManager.myLikes().then(myLikes => {
             this.setState({
@@ -77,7 +77,7 @@ export default class ApplicationViews extends Component {
         // })
 
 
-        Promise.all([usersLoading, dogsLoading, matchesLoading, myLikesLoading, likedMeLoading]).then(() => {
+        Promise.all([usersLoading, dogsLoading, likesLoading, matchesLoading, myLikesLoading, likedMeLoading]).then(() => {
             this.setState(
                 {
                     initialized: true
@@ -144,7 +144,7 @@ export default class ApplicationViews extends Component {
                     users: users
                 })
             );
-            
+
     editDogs = (dogs, url) =>
         DogsManager.patchAndListDogs(dogs, url).then(() => DogsManager.getAll())
             .then(dogs =>
@@ -153,7 +153,21 @@ export default class ApplicationViews extends Component {
                 })
             );
 
+    deleteUsers = (id) => {
+        return UsersManager.deleteProfile(id).then(users =>
+            this.setState({
+                users: users
+            })
+        );
+    };
 
+    deleteDogs = (id) => {
+        return DogsManager.deleteProfile(id).then(dogs =>
+            this.setState({
+                dogs: dogs
+            })
+        );
+    };
 
     render() {
         if (this.state.initialized) {
@@ -192,6 +206,12 @@ export default class ApplicationViews extends Component {
                     <Route exact path="/profile" render={(props) => {
                         if (this.isAuthenticated()) {
                             return <UsersList {...props}
+                                deleteUsers={this.deleteUsers}
+                                deleteDogs={this.deleteDogs}
+                                unmatch={this.unmatch}
+                                unlike={this.unlike}
+                                matches={this.state.matches}
+                                likes={this.state.likes}
                                 users={this.state.users}
                                 dogs={this.state.dogs} />
                         } else {

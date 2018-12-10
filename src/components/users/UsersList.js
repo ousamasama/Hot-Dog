@@ -9,38 +9,43 @@ export default class UsersList extends Component {
         let currentUserIdParsed = Number(currentUserId)
         let myUserName = this.props.users.filter(user => {
             if (user.username === currentUser) {
-              return true
+                return true
             } else {
-              return false
+                return false
             }
-          }).map(user => {
+        }).map(user => {
             return user
-          })
+        })
         let myDog = this.props.dogs.filter(dog => {
-            if(dog.ownerId === currentUserIdParsed) {
+            if (dog.ownerId === currentUserIdParsed) {
                 return true
             } else {
                 return false
             }
         }).map(dog => {
-            console.log(dog)
             return dog
         })
         return (
             <React.Fragment className="usersContainer">
-                    {
-                        myUserName.map(user => {
-                            if (currentUser) {
-                                return <UsersCard
-                                    key={user.id}
-                                    myDog={myDog}
-                                    user={user}
-                                    {...this.props} />
-                            } else {
-                                return null
-                            }
-                        })
-                    }
+                {
+                    myUserName.map(user => {
+                        if (currentUser) {
+                            return <UsersCard
+                                key={user.id}
+                                myDog={myDog}
+                                user={user}
+                                deleteUsers={this.props.deleteUsers}
+                                deleteDogs={this.props.deleteDogs}
+                                unmatch={this.props.unmatch}
+                                unlike={this.props.unlike}
+                                likes={this.props.likes}
+                                matches={this.props.matches}
+                                {...this.props} />
+                        } else {
+                            return null
+                        }
+                    })
+                }
             </React.Fragment>
         )
     }

@@ -13,6 +13,9 @@ class DogsManager extends APIManager {
   removeAndList(id) {
     return this.delete(id).then(() => this.all())
   }
+  deleteProfile(id) {
+    return this.delete(id).then(() => this.all())
+  }
   patchAndListDogs(payload, url) {
     return this.patch(payload, url).then(() => this.allSortedFurthest())
   }
