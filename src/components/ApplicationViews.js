@@ -28,6 +28,32 @@ export default class ApplicationViews extends Component {
     };
 
     componentDidMount() {
+        let currentUserId = sessionStorage.getItem("userID");
+
+
+        // let oneRandomDogLoading = APIManager.oneRandomDog().then(randomDog => {
+        //     this.setState({
+        //         randomDog: randomDog
+        //     })
+        // })
+
+        // let manyRandomDogsLoading = APIManager.manyRandomDogs().then(randomDog => {
+        //     this.setState({
+        //         randomDog: randomDog
+        //     })
+        // })
+        this.setState(
+            {
+                initialized: true
+            }
+        )
+
+        if(currentUserId !== undefined) {
+            this.refreshData(currentUserId)
+        }
+    }
+
+    refreshData = (id) => {
         let usersLoading = UsersManager.getAll().then(users => {
             this.setState({
                 users: users
@@ -53,41 +79,23 @@ export default class ApplicationViews extends Component {
             });
         });
 
-        let myLikesLoading = LikesManager.myLikes().then(myLikes => {
+        let myLikesLoading = LikesManager.myLikes(id).then(myLikes => {
             console.log("my likes", myLikes)
             this.setState({
                 myLikes: myLikes
             });
         });
 
-        let likedMeLoading = LikesManager.likedMe().then(likedMes => {
+        let likedMeLoading = LikesManager.likedMe(id).then(likedMes => {
             console.log("liked me", likedMes)
             this.setState({
                 likedMes: likedMes
             });
         });
 
-        // let oneRandomDogLoading = APIManager.oneRandomDog().then(randomDog => {
-        //     this.setState({
-        //         randomDog: randomDog
-        //     })
-        // })
-
-        // let manyRandomDogsLoading = APIManager.manyRandomDogs().then(randomDog => {
-        //     this.setState({
-        //         randomDog: randomDog
-        //     })
-        // })
-
-
         Promise.all([usersLoading, dogsLoading, likesLoading, matchesLoading, myLikesLoading, likedMeLoading]).then(() => {
             console.log("myLikesLoading", myLikesLoading)
             console.log("likedMeLoading", likedMeLoading)
-            this.setState(
-                {
-                    initialized: true
-                }
-            )
         })
     }
 
@@ -264,6 +272,7 @@ export default class ApplicationViews extends Component {
                     }} />
                     <Route exact path="/login" render={props => {
                         return <Login {...props}
+                            refreshData={this.refreshData}
                             users={this.state.users} />;
                     }}
                     />
