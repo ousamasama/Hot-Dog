@@ -18,7 +18,7 @@ export default class ApplicationViews extends Component {
     state = {
         messages: [],
         matches: [],
-        // likes: [], 
+        likes: [], 
         dogs: [],
         users: [],
         likedMes: [],
@@ -47,18 +47,21 @@ export default class ApplicationViews extends Component {
         });
 
         let likesLoading = LikesManager.getAll().then(likes => {
+            console.log("likes", likes)
             this.setState({
                 likes: likes
             });
         });
 
         let myLikesLoading = LikesManager.myLikes().then(myLikes => {
+            console.log("my likes", myLikes)
             this.setState({
                 myLikes: myLikes
             });
         });
 
         let likedMeLoading = LikesManager.likedMe().then(likedMes => {
+            console.log("liked me", likedMes)
             this.setState({
                 likedMes: likedMes
             });
@@ -78,6 +81,8 @@ export default class ApplicationViews extends Component {
 
 
         Promise.all([usersLoading, dogsLoading, likesLoading, matchesLoading, myLikesLoading, likedMeLoading]).then(() => {
+            console.log("myLikesLoading", myLikesLoading)
+            console.log("likedMeLoading", likedMeLoading)
             this.setState(
                 {
                     initialized: true
@@ -184,10 +189,11 @@ export default class ApplicationViews extends Component {
                     }} />
                     <Route exact path="/matches" render={(props) => {
                         if (this.isAuthenticated()) {
+                            console.log("state", this.state)
                             return <MatchesList {...props}
                                 matches={this.state.matches}
                                 users={this.state.users}
-                                // likes={this.state.likes}
+                                likes={this.state.likes}
                                 myLikes={this.state.myLikes}
                                 likedMes={this.state.likedMes}
                                 // getUnmatched={this.getUnmatched}

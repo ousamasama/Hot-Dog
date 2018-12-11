@@ -77,36 +77,51 @@ export default class MatchesCard extends Component {
                 size="tiny"
                 color="red"
                 onClick={() => {
-                  this.props.theirLikesForMe(this.props.user.id).then(theirLikesForMe => {
-                    this.props.myLikesForThem(this.props.user.id).then(myLikesForThem => {
-                      // return myLikesForThem
-                      this.props.theirMatchesForMe(this.props.user.id).then(theirMatchesForMe => {
-                        this.props.myMatchesForThem(this.props.user.id).then(myMatchesForThem => {
-                          // this.props.unlike(myLikesForThem[0].id)
-                          // this.props.unmatch(theirMatchesForMe[0].id)
-                          // this.props.unlike(theirLikesForMe[0].id)
-                          // this.props.unmatch(myMatchesForThem[0].id)
-                          Promise.all(
-                            [
-                              this.props.unlike(myLikesForThem[0].id),
-                              this.props.unmatch(theirMatchesForMe[0].id),
-                              this.props.unlike(theirLikesForMe[0].id),
-                              this.props.unmatch(myMatchesForThem[0].id)
-                            ]
-                          ).then()
-                          // return myLikesForThem
-                        });
-                        // return myLikesForThem
-                      });
-                    });
-                  });
+                  let theirLikesForMe = this.props.theirLikesForMe(this.props.user.id)
+                  let myLikesForThem = this.props.myLikesForThem(this.props.user.id)
+                  let theirMatchesForMe = this.props.theirMatchesForMe(this.props.user.id)
+                  let myMatchesForThem = this.props.myMatchesForThem(this.props.user.id)
+                  Promise.all([theirLikesForMe, myLikesForThem, theirMatchesForMe, myMatchesForThem])
+                    .then(([theirLikesForMe, myLikesForThem, theirMatchesForMe, myMatchesForThem]) => {
+                      this.props.unlike(myLikesForThem[0].id)
+                      this.props.unmatch(theirMatchesForMe[0].id)
+                      this.props.unlike(theirLikesForMe[0].id)
+                      this.props.unmatch(myMatchesForThem[0].id)
+                      console.log("You unmatched...")
+                    })
+                }
+                }
+                // this.props.theirLikesForMe(this.props.user.id).then(theirLikesForMe => {
+                //   // return myLikesForThem
+                //     this.props.myLikesForThem(this.props.user.id).then(myLikesForThem => {
+                //     this.props.theirMatchesForMe(this.props.user.id).then(theirMatchesForMe => {
+                //       this.props.myMatchesForThem(this.props.user.id).then(myMatchesForThem => {
+                //         // this.props.unlike(myLikesForThem[0].id)
+                //         // this.props.unmatch(theirMatchesForMe[0].id)
+                //         // this.props.unlike(theirLikesForMe[0].id)
+                //         // this.props.unmatch(myMatchesForThem[0].id)
+                //         Promise.all(
+                //           [
+                //             this.props.unlike(myLikesForThem[0].id),
+                //             this.props.unmatch(theirMatchesForMe[0].id),
+                //             this.props.unlike(theirLikesForMe[0].id),
+                //             this.props.unmatch(myMatchesForThem[0].id)
+                //           ]
+                //         )
+                //         // .then()
+                //         // return myLikesForThem
+                //       });
+                //       // return myLikesForThem
+                //     });
+                //   });
+                // });
 
-                  // this.props.unmatch(unmatchId)
-                  // this.props.unlike(unlikeId)
-                  // this.props.getUnliked(getUnlikedId)
-                  // this.props.getUnmatched(getUnmatchedId)
-                }
-                }
+                // this.props.unmatch(unmatchId)
+                // this.props.unlike(unlikeId)
+                // this.props.getUnliked(getUnlikedId)
+                // this.props.getUnmatched(getUnmatchedId)
+                // }
+                // }
                 className="card-link"
               >
                 Unmatch
