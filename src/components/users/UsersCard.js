@@ -59,10 +59,10 @@ export default class UsersCard extends Component {
     }).map(match => {
       return match
     })
-    console.log("my likes", myLikes)
-    console.log("their likes", theirLikes)
-    console.log("my matches", myMatches)
-    console.log("their matches", theirMatches)
+    // console.log("my likes", myLikes)
+    // console.log("their likes", theirLikes)
+    // console.log("my matches", myMatches)
+    // console.log("their matches", theirMatches)
     const { open, dimmer } = this.state;
     return (
       <React.Fragment>
@@ -77,8 +77,8 @@ export default class UsersCard extends Component {
               <Card.Meta>{this.props.user.username}</Card.Meta>
               <Card.Meta>{this.props.user.dogName}</Card.Meta>
               <Card.Header>Your Profile</Card.Header>
-              <Button as={Link} size="tiny" color="orange" className="card-link" to={`/users/edit/${this.props.user.id}`}>Edit</Button>
-              <Button
+              <Button as={Link} size="tiny" color="orange" className="card-link" to={`/users/edit/${this.props.user.id}`}>Edit Your Profile</Button>
+              {/* <Button
               onClick={
                 ()=> {
                   myLikes.forEach(like => {
@@ -100,7 +100,7 @@ export default class UsersCard extends Component {
               }
               >
                 Test
-              </Button>
+              </Button> */}
               <Button
                 size="tiny"
                 color="red"
@@ -121,7 +121,10 @@ export default class UsersCard extends Component {
                     this.props.deleteUsers(this.props.user.id)
                     this.props.deleteDogs(myDog[0].id)
                       .then(() => sessionStorage.clear())
-                      .then(() => this.props.history.push("/home"))
+                      // .then(() => this.props.history.push("/home"))
+                      .then(() => {
+                        window.location.replace("http://localhost:3000/home")
+                      })
                     console.log("Your profile has been deleted and you have been logged out. Return you to our home page.")
                   }
                 }

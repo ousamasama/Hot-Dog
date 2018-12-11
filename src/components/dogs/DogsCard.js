@@ -38,7 +38,7 @@ export default class DogsCard extends Component {
                 <Card.Group className="matchesCard">
                     <Card color='red' key={this.props.dog.id} className="card">
                         <h5 className="card-title">
-                        <Card.Header>{this.props.dog.name}</Card.Header>
+                            <Card.Header>{this.props.dog.name}</Card.Header>
                             <Image
                                 className="dog-pic"
                                 // size="medium"
@@ -53,9 +53,11 @@ export default class DogsCard extends Component {
                                 content="Match Me?"
                                 icon="heart"
                                 onClick={
-                                    () => {this.props.match(this.props.dog.owner, currentUser, currentUserIdParsed, this.props.dog.ownerId)
-                                     this.props.like(this.props.dog.ownerId, currentUserIdParsed)}
-                                    // .then(() => this.props.history.push("/matches"))
+                                    () => {
+                                        this.props.match(this.props.dog.owner, currentUser, currentUserIdParsed, this.props.dog.ownerId)
+                                        this.props.like(this.props.dog.ownerId, currentUserIdParsed)
+                                        // .then(() => this.props.history.push("/matches"))
+                                    }
                                 }
                                 className="card-link">
                             </Button>
@@ -74,7 +76,7 @@ export default class DogsCard extends Component {
                                         <p>Match me?</p>
                                     </Modal.Description>
                                 </Modal.Content> */}
-                                {/* <Modal.Actions>
+                            {/* <Modal.Actions>
                                     <Button onClick={this.close} color="yellow">Back</Button>
                                     <Button
                                         onClick={() => this.props.match(this.props.dog.owner, currentUser, currentUserId, this.props.dog.ownerId).then(() => this.props.history.push("/matches"))}

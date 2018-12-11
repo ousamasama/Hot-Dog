@@ -8,11 +8,11 @@ class LikesManager extends APIManager {
   getAll() {
     return this.all()
   }
-  likedMe() {
-    return fetch(`http://localhost:5002/likes?likedUserId=${currentUserIdParsed}`).then(data => data.json())
+  likedMe(loggedInUsersId) {
+    return fetch(`http://localhost:5002/likes?likedUserId=${loggedInUsersId}`).then(data => data.json())
   }
-  myLikes() {
-    return fetch(`http://localhost:5002/likes?likedByUserId=${currentUserIdParsed}`).then(data => data.json())
+  myLikes(loggedInUsersId) {
+    return fetch(`http://localhost:5002/likes?likedByUserId=${loggedInUsersId}`).then(data => data.json())
   }
   usersLikes(userId) {
     return fetch(`http://localhost:5002/likes?likedUserId=${currentUserIdParsed}&likedByUserId=${userId}`).then(data => data.json())

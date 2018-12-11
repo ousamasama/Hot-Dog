@@ -38,13 +38,17 @@ export default class Login extends Component {
     verifyUser = event => {
         event.preventDefault();
         let testResult;
+        let currentUsersId;
         for (let i = 0; i < this.props.users.length; i++) {
-            if (this.props.users[i].username.indexOf(this.state.username) > -1) {
+            if (this.props.users[i].username === this.state.username) {
                 // now check password
+                console.log("am i working?")
                 if (this.props.users[i].password === this.state.password) {
                     // log in: store user ID (from matching object) in session storage
+                    console.log("logged in")
                     sessionStorage.setItem("userID", this.props.users[i].id);
                     sessionStorage.setItem("username", this.props.users[i].username);
+                    currentUsersId = this.props.users[i].id
                     testResult = "You are logged in!";
                     break;
                 } else {
@@ -57,6 +61,8 @@ export default class Login extends Component {
         }
         // tell the user the result of the test
         console.log(testResult);
+        console.log("current users id", currentUsersId)
+        this.props.refreshData(currentUsersId)
         this.props.history.push("/home")
     };
 
