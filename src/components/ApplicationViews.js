@@ -9,6 +9,9 @@ import RandomDog from "../randomdog/RandomDog";
 import DogsList from "./dogs/DogsList"
 import DogsDetail from "./dogs/DogsDetail"
 import DogsManager from "../managers/DogsManager";
+import MessagesList from "./messages/MessagesList";
+import MessagesForm from "./messages/MessagesForm";
+import MessagesManager from "../managers/MessagesManager";
 import UsersList from "./users/UsersList"
 import UsersEdit from "./users/UsersEdit"
 import UsersManager from "../managers/UsersManager";
@@ -18,11 +21,13 @@ export default class ApplicationViews extends Component {
     state = {
         messages: [],
         matches: [],
-        likes: [], 
+        likes: [],
         dogs: [],
         users: [],
         likedMes: [],
         myLikes: [],
+        // theirMessages: [],
+        // myMessages: [],
         randomDog: [],
         initialized: false
     };
@@ -42,15 +47,26 @@ export default class ApplicationViews extends Component {
         //         randomDog: randomDog
         //     })
         // })
-        this.setState(
-            {
-                initialized: true
-            }
-        )
 
-        if(currentUserId !== undefined) {
-            this.refreshData(currentUserId)
+        if (currentUserId !== undefined) {
+            this.refreshData(currentUserId).then(() => {
+                this.setState(
+                    {
+                        initialized: true
+                    }
+                )
+                this.interval = setInterval(
+                    () => {
+                        this.refreshData(currentUserId);
+                        console.log("i have refreshed...");
+                    }, 5000)
+            })
         }
+
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     refreshData = (id) => {
@@ -72,31 +88,31 @@ export default class ApplicationViews extends Component {
             });
         });
 
+        let messagesLoading = MessagesManager.getAll().then(messages => {
+            this.setState({
+                messages: messages
+            });
+        });
+
         let likesLoading = LikesManager.getAll().then(likes => {
-            console.log("likes", likes)
             this.setState({
                 likes: likes
             });
         });
 
         let myLikesLoading = LikesManager.myLikes(id).then(myLikes => {
-            console.log("my likes", myLikes)
             this.setState({
                 myLikes: myLikes
             });
         });
 
         let likedMeLoading = LikesManager.likedMe(id).then(likedMes => {
-            console.log("liked me", likedMes)
             this.setState({
                 likedMes: likedMes
             });
         });
 
-        Promise.all([usersLoading, dogsLoading, likesLoading, matchesLoading, myLikesLoading, likedMeLoading]).then(() => {
-            console.log("myLikesLoading", myLikesLoading)
-            console.log("likedMeLoading", likedMeLoading)
-        })
+        return Promise.all([usersLoading, dogsLoading, messagesLoading, likesLoading, matchesLoading, myLikesLoading, likedMeLoading])
     }
 
     isAuthenticated = () => sessionStorage.getItem("username") !== null
@@ -116,6 +132,14 @@ export default class ApplicationViews extends Component {
     myMatchesForThem = (myId) => {
         return MatchesManager.matchedUser(myId);
     };
+
+    // messagesToMe = (theirId) => {
+    //     return MessagesManager.messagesToMe(theirId)
+    // };
+
+    // messagesFromMe = (theirId) => {
+    //     return MessagesManager.messagesFromMe(theirId);
+    // };
 
     unmatch = (id) => {
         return MatchesManager.unmatch(id).then(matches =>
@@ -182,6 +206,15 @@ export default class ApplicationViews extends Component {
         );
     };
 
+    addMessage = messages =>
+        MessagesManager.addAndList(messages)
+            .then(() => MessagesManager.getAll()).then(messages =>
+                this.setState({
+                    messages: messages
+                })
+            );
+
+
     render() {
         if (this.state.initialized) {
             return (
@@ -197,17 +230,20 @@ export default class ApplicationViews extends Component {
                     }} />
                     <Route exact path="/matches" render={(props) => {
                         if (this.isAuthenticated()) {
-                            console.log("state", this.state)
+                            // console.log("state", this.state)
                             return <MatchesList {...props}
                                 matches={this.state.matches}
                                 users={this.state.users}
                                 likes={this.state.likes}
                                 myLikes={this.state.myLikes}
                                 likedMes={this.state.likedMes}
+                                messages={this.props.messages}
                                 // getUnmatched={this.getUnmatched}
                                 // getUnliked={this.getUnliked}
                                 unmatch={this.unmatch}
                                 unlike={this.unlike}
+                                // messagesToMe={this.messagesToMe}
+                                // messagesFromMe={this.messagesFromMe}
                                 theirLikesForMe={this.theirLikesForMe}
                                 myLikesForThem={this.myLikesForThem}
                                 theirMatchesForMe={this.theirMatchesForMe}
@@ -270,6 +306,36 @@ export default class ApplicationViews extends Component {
                             return <Redirect to="/login" />
                         }
                     }} />
+                    <Route exact path="/messages/:toUserId" render={props => {
+                        if (this.isAuthenticated()) {
+                            return <MessagesList {...props}
+                                messages={this.state.messages}
+                                users={this.state.users}
+                                matches={this.state.matches}
+                                likes={this.state.likes}
+                                myMessages={this.state.myMessages}
+                                theirMessages={this.state.theirMessages}
+                                // deleteMessage={this.deleteMessage}
+                                // friends={this.state.friends}
+                                // messagesToMe={this.messagesToMe}
+                                // messagesFromMe={this.messagesFromMe}
+                                refreshData={this.refreshData}
+                                addFriend={this.addFriend} />;
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }}
+                    />
+                    <Route exact path="/messages/new/:toUserId" render={props => {
+                        if (this.isAuthenticated()) {
+                            return <MessagesForm {...props}
+                                refreshData={this.refreshData}
+                                addMessage={this.addMessage} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }}
+                    />
                     <Route exact path="/login" render={props => {
                         return <Login {...props}
                             refreshData={this.refreshData}
@@ -281,7 +347,6 @@ export default class ApplicationViews extends Component {
                             users={this.state.users} />;
                     }}
                     />
-
                 </React.Fragment>
             )
         } else {

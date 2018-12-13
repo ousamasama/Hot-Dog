@@ -42,7 +42,7 @@ export default class Login extends Component {
         for (let i = 0; i < this.props.users.length; i++) {
             if (this.props.users[i].username === this.state.username) {
                 // now check password
-                console.log("am i working?")
+                // console.log("am i working?")
                 if (this.props.users[i].password === this.state.password) {
                     // log in: store user ID (from matching object) in session storage
                     console.log("logged in")
@@ -60,8 +60,8 @@ export default class Login extends Component {
             }
         }
         // tell the user the result of the test
-        console.log(testResult);
-        console.log("current users id", currentUsersId)
+        // console.log(testResult);
+        // console.log("current users id", currentUsersId)
         this.props.refreshData(currentUsersId)
         this.props.history.push("/home")
     };
@@ -71,6 +71,7 @@ export default class Login extends Component {
         console.log("logout clicked");
         // clear out session storage
         sessionStorage.clear();
+        window.location.replace("http://localhost:3000/home")
     };
 
     render() {

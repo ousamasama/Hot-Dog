@@ -14,6 +14,7 @@ class APIManager {
   all() {
     return fetch(`${remoteURL}/${this.route}`).then(data => data.json())
   }
+  
 
   static manyRandomDogs() {
     return fetch(`${manyRandomDogsURL}`).then(data => data.json())
