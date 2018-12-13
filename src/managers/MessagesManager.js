@@ -16,7 +16,7 @@ class MessagesManager extends APIManager {
   messagesToMe(userId) {
     return fetch(`http://localhost:5002/messages?toUserId=${currentUserIdParsed}&fromUserId=${userId}`).then(data => data.json())
   }
-  removeAndList(id) {
+  deleteMessage(id) {
     return this.delete(id).then(() => this.all())
   }
   addAndList(newMessage) {

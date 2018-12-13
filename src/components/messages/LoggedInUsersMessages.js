@@ -8,10 +8,10 @@ export default class LoggedInUsersMessages extends Component {
   
     render() {
     return (
-      <Card.Group className="userMessageContainer">
-        <Card fluid key={this.props.message.id} className="loggedInUsersMessageCards">
-          <h5 className="card-title">
-            <Card.Header>You said: {this.props.message.message}</Card.Header>
+      // <Card.Group className="userMessageContainer">
+        <Message fluid key={this.props.message.id} className="loggedInUsersMessages">
+          <h5 className="message-title">
+            <Message.Header>{this.props.message.username} said: {this.props.message.message}</Message.Header>
             <br />
             {/* <Image
                   wrapped
@@ -45,8 +45,8 @@ export default class LoggedInUsersMessages extends Component {
               Delete
             </Button> */}
           </h5>
-        </Card>
-      </Card.Group>
+        </Message>
+      // </Card.Group>
     );
   }
 }

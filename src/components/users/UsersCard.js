@@ -32,6 +32,27 @@ export default class UsersCard extends Component {
     }).map(like => {
       return like
     })
+    let myMessages = this.props.messages.filter(message => {
+      if(message.toUserId === currentUserIdParsed) {
+        return true
+      } else {
+        return false
+      }
+    }).map(message => {
+      return message
+    })
+    let theirMessages = this.props.messages.filter(message => {
+      if(message.fromUserId === currentUserIdParsed) {
+        return true
+      } else {
+        return false
+      }
+    }).map(message => {
+      return message
+    })
+    console.log("their messages", theirMessages)
+    console.log("my messages", myMessages)
+
     let theirLikes = this.props.likes.filter(like => {
       if (like.likedUserId === currentUserIdParsed) {
         return true
@@ -117,6 +138,12 @@ export default class UsersCard extends Component {
                     })
                     theirMatches.forEach(match => {
                       this.props.unmatch(match.id)
+                    })
+                    theirMessages.forEach(message => {
+                      this.props.deleteMessages(message.id)
+                    })
+                    myMessages.forEach(message => {
+                      this.props.deleteMessages(message.id)
                     })
                     this.props.deleteUsers(this.props.user.id)
                     this.props.deleteDogs(myDog[0].id)

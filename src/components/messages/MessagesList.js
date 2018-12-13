@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LoggedInUsersMessages from "./LoggedInUsersMessages"
 import MatchesMessages from "./MatchesMessages"
 import { Button } from 'semantic-ui-react'
@@ -25,7 +26,6 @@ export default class MessagesList extends Component {
         // console.log("messagesToMe", messagesToMe)
         const messages = messagesToMe.concat(messagesFromMe)
         // console.log("messages", messages)
-        // sort array of dates from
         function compare(a,b) {
             if (a.date < b.date)
               return -1;
@@ -38,7 +38,6 @@ export default class MessagesList extends Component {
         this.setState({
             messages: messages
         })
-        // convert game dates out of Z time to get local timezone accuracy
     }
 
     render() {
@@ -97,15 +96,7 @@ export default class MessagesList extends Component {
         // })
         return (
             <React.Fragment>
-                <section className="messagesButton">
-                    <Button color="green" type="button"
-                        className="btn btn-success"
-                        onClick={() => {
-                            this.props.history.push(`/messages/new/${parseInt(this.props.match.params.toUserId)}`)
-                        }}>New Message
-                    </Button>
-                </section>
-                <section className="messages list">
+                <section className="messagesList">
                     {
                         this.state.messages.map(message => {
                             if (message.fromUserId === currentUserIdParsed) {
@@ -115,6 +106,15 @@ export default class MessagesList extends Component {
                             }
                         })
                     }
+                </section>
+                <Button as={Link} size="tiny" color="yellow" className="card-link" to={`/matches/`}>Back</Button>
+                <section className="messagesButton">
+                    <Button color="green" type="button"
+                        className="btn btn-success"
+                        onClick={() => {
+                            this.props.history.push(`/messages/new/${parseInt(this.props.match.params.toUserId)}`)
+                        }}>New Message
+                    </Button>
                 </section>
             </React.Fragment>
         )

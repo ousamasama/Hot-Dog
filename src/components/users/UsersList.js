@@ -34,6 +34,8 @@ export default class UsersList extends Component {
                                 key={user.id}
                                 myDog={myDog}
                                 user={user}
+                                deleteMessages={this.props.deleteMessages}
+                                messages={this.props.messages}
                                 deleteUsers={this.props.deleteUsers}
                                 deleteDogs={this.props.deleteDogs}
                                 unmatch={this.props.unmatch}

@@ -1,0 +1,71 @@
+
+    .matchesMessages {
+    /* background-color: cornsilk !important; */
+    /* border: 1px solid black !important; */
+    /* font-style: italic; */
+    /* display: flex !important; */
+    text-align: left !important;
+    /* justify-content: center !important; */
+  }
+
+  .messagesList {
+    border: 1px solid black !important;
+  }
+  
+  /* .notFriendsMessageCards {
+    background-color: pink !important;
+    border: 1px solid black !important;
+    text-align: center;
+    display: flex !important;
+    justify-content: center !important;
+  }
+   */
+  .loggedInUsersMessages {
+    /* background-color: lavender !important; */
+    /* border: 1px solid black !important; */
+    text-align: right !important;
+    /* display: flex !important; */
+    /* justify-content: center !important; */
+  }
+  
+  /* .userMessageContainer {
+    margin-left: 30% !important;
+    margin-top: 10px !important;
+  }
+  
+  .othersMessageContainer {
+    margin-right: 30% !important;
+    margin-top: 10px !important;
+  }
+  
+  .notOthersMessageContainer {
+    margin-right: 30% !important;
+    margin-top: 10px !important;
+  } */
+  
+  /* .messagesForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: lavender;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 3px solid darkgray;
+    border-radius: 20px;
+  }
+  
+  .form-group {
+    width: 50%;
+    align-items: center;
+    align-content: center;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  } */

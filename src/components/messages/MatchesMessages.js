@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Image, Card } from "semantic-ui-react";
+import { Button, Image, Card, Message } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./Messages.css";
 
@@ -7,10 +7,10 @@ export default class MatchesMessages extends Component {
   render() {
     console.log("look at me", this.props.message)
     return (
-      <Card.Group className="othersMessageContainer">
-        <Card fluid key={this.props.message.id} className="friendsMessageCards">
-          <h5 className="card-title">
-            <Card.Header>{this.props.message.username} said: {this.props.message.message}</Card.Header>
+      // <Card.Group className="othersMessageContainer">
+        <Message fluid key={this.props.message.id} className="matchesMessages">
+          <h5 className="message-title">
+            <Message.Header>{this.props.message.username} said: {this.props.message.message}</Message.Header>
             <br />
             {/* <Button
               as={Link}
@@ -23,8 +23,8 @@ export default class MatchesMessages extends Component {
             </Button> */}
             {/* View Friend Link Here */}
           </h5>
-        </Card>
-      </Card.Group>
+        </Message>
+      // </Card.Group>
     );
   }
 }

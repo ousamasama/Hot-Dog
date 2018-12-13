@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import MatchesCard from "./MatchesCard"
 // import UsersCard from "./UsersCard"
 import { Button, Grid } from 'semantic-ui-react'
-// import "./UsersCard.css"
+import "./MatchesCard.css"
 
 export default class MatchesList extends Component {
     render() {
@@ -28,7 +28,7 @@ export default class MatchesList extends Component {
             return like.likedUserId
         })
         return (
-            <Grid columns={3} divided className="matchesContainer">
+            <Grid columns={3} divided="vertically" className="matchesContainer">
                 <Grid.Row>
                     {
                         this.props.users.map(user => {
@@ -45,6 +45,7 @@ export default class MatchesList extends Component {
                                     messages={this.props.messages}
                                     messagesToMe={this.props.messagesToMe}
                                     messagesFromMe={this.props.messagesFromMe}
+                                    deleteMessages={this.props.deleteMessages}
                                     // getUnmatched={this.props.getUnmatched}
                                     // getUnliked={this.props.getUnliked}
                                     theirLikesForMe={this.props.theirLikesForMe}
