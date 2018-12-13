@@ -82,7 +82,7 @@
     },
     {
       "username": "Madi",
-      "password": "madi",
+      "password": "Madi",
       "id": 11,
       "avatar": "https://i.imgur.com/WEO2JS5.jpg",
       "dog": "https://i.imgur.com/WEO2JS5.jpg",
@@ -132,10 +132,38 @@
   "matches": [
     {
       "matchname": "Ousama",
+      "username": "Zac",
+      "userId": 1,
+      "friendId": 2,
+      "id": 1
+    },
+    {
+      "matchname": "Zac",
+      "username": "Ousama",
+      "userId": 4,
+      "friendId": 1,
+      "id": 2
+    },
+    {
+      "matchname": "Brendan",
+      "username": "Ousama",
+      "userId": 1,
+      "friendId": 3,
+      "id": 3
+    },
+    {
+      "matchname": "Ousama",
       "username": "Brendan",
       "userId": 3,
       "friendId": 1,
       "id": 4
+    },
+    {
+      "matchname": "Joe",
+      "username": "Ousama",
+      "userId": 1,
+      "friendId": 6,
+      "id": 5
     },
     {
       "matchname": "Ousama",
@@ -159,6 +187,13 @@
       "id": 8
     },
     {
+      "matchname": "Michael",
+      "username": "Ousama",
+      "userId": 1,
+      "friendId": 5,
+      "id": 9
+    },
+    {
       "matchname": "Ousama",
       "username": "Michael",
       "userId": 5,
@@ -178,16 +213,29 @@
       "userId": 2,
       "friendId": 5,
       "id": 12
-    },
-    {
-      "matchname": "Ousama",
-      "username": "Madi",
-      "userId": 11,
-      "friendId": 1,
-      "id": 14
     }
   ],
   "likes": [
+    {
+      "likedUserId": 2,
+      "likedByUserId": 1,
+      "id": 1
+    },
+    {
+      "likedUserId": 1,
+      "likedByUserId": 2,
+      "id": 2
+    },
+    {
+      "likedUserId": 6,
+      "likedByUserId": 1,
+      "id": 3
+    },
+    {
+      "likedUserId": 1,
+      "likedByUserId": 6,
+      "id": 4
+    },
     {
       "likedUserId": 8,
       "likedByUserId": 4,
@@ -197,6 +245,16 @@
       "likedUserId": 4,
       "likedByUserId": 8,
       "id": 6
+    },
+    {
+      "likedUserId": 5,
+      "likedByUserId": 1,
+      "id": 7
+    },
+    {
+      "likedUserId": 1,
+      "likedByUserId": 5,
+      "id": 8
     },
     {
       "likedUserId": 2,
@@ -276,22 +334,6 @@
     },
     {
       "message": "nice",
-      "username": "Ousama",
-      "fromUserId": 1,
-      "toUserId": 2,
-      "date": "2018-12-13T16:53:06.601Z",
-      "id": 10
-    },
-    {
-      "message": "wanna see kiwi nudes",
-      "username": "Brendan",
-      "fromUserId": 2,
-      "toUserId": 1,
-      "date": "2018-12-13T16:57:53.686Z",
-      "id": 11
-    },
-    {
-      "message": "nice",
       "username": "Michael",
       "fromUserId": 5,
       "toUserId": 1,
@@ -299,60 +341,20 @@
       "id": 13
     },
     {
-      "message": "yeah",
-      "username": "Ousama",
-      "fromUserId": 1,
-      "toUserId": 2,
-      "date": "2018-12-13T17:14:39.123Z",
+      "message": "nice",
+      "username": "Brendan",
+      "fromUserId": 2,
+      "toUserId": 1,
+      "date": "2018-12-13T19:56:36.865Z",
       "id": 14
-    },
-    {
-      "message": "cake",
-      "username": "Ousama",
-      "fromUserId": 1,
-      "toUserId": 2,
-      "date": "2018-12-13T17:36:48.265Z",
-      "id": 15
     },
     {
       "message": "nice",
       "username": "Ousama",
       "fromUserId": 1,
       "toUserId": 2,
-      "date": "2018-12-13T17:37:21.149Z",
-      "id": 16
-    },
-    {
-      "message": "hey olive's owner",
-      "username": "Madi",
-      "fromUserId": 11,
-      "toUserId": 1,
-      "date": "2018-12-13T18:30:28.274Z",
-      "id": 17
-    },
-    {
-      "message": "hey veras owner",
-      "username": "Ousama",
-      "fromUserId": 1,
-      "toUserId": 11,
-      "date": "2018-12-13T18:30:44.903Z",
-      "id": 18
-    },
-    {
-      "message": "test not me",
-      "username": "Madi",
-      "fromUserId": 12,
-      "toUserId": 11,
-      "date": "2018-12-13T18:30:44.903Z",
-      "id": 19
-    },
-    {
-      "message": "test not me",
-      "username": "Tanner",
-      "fromUserId": 12,
-      "toUserId": 11,
-      "date": "2018-12-13T18:31:44.903Z",
-      "id": 20
+      "date": "2018-12-13T19:56:48.664Z",
+      "id": 15
     }
   ],
   "dogs": [
@@ -461,5 +463,6 @@
       "picture": "https://i.imgur.com/CeoBmjz.jpg?1",
       "id": 15
     }
-  ]
+  ],
+  "parks": []
 }
