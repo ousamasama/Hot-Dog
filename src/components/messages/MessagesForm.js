@@ -9,11 +9,10 @@ export default class NewsForm extends Component {
     // Set initial state
     state = {
         message: "",
-        date: "",
+        username: "",
         fromUserId: "",
         toUserId: "",
-        username: ""
-
+        date: ""
     }
 
 
@@ -28,13 +27,13 @@ export default class NewsForm extends Component {
         evt.preventDefault()
         const messages = {
             message: this.state.message,
-            date: new Date(),
+            username: currentUser,
             fromUserId: currentUserIdParsed,
             toUserId:  parseInt(this.props.match.params.toUserId),
-            username: currentUser
+            date: new Date()
         }
+        // this.props.refreshData(currentUserIdParsed)
         this.props.addMessage(messages).then(() => this.props.history.push(`/messages/${parseInt(this.props.match.params.toUserId)}`))
-        this.props.refreshData(currentUserIdParsed)
     }
 
     render() {

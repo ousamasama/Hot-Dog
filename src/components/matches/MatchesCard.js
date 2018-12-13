@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Image, Header, Modal, Card, Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-// import "./UsersCard.css"
+import "./MatchesCard.css"
 // import "./Friends.css";
 
 export default class MatchesCard extends Component {
@@ -128,6 +128,8 @@ export default class MatchesCard extends Component {
                 Unmatch
               </Button>
               <Button
+              size="tiny"
+              color="pink"
               onClick={
                 () => this.props.history.push(`/messages/${this.props.user.id}`)
               }

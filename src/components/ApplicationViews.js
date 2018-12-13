@@ -206,6 +206,14 @@ export default class ApplicationViews extends Component {
         );
     };
 
+    deleteMessages = (id) => {
+        return MessagesManager.deleteMessage(id).then(messages =>
+            this.setState({
+                messages: messages
+            })
+        );
+    };
+
     addMessage = messages =>
         MessagesManager.addAndList(messages)
             .then(() => MessagesManager.getAll()).then(messages =>
@@ -238,6 +246,7 @@ export default class ApplicationViews extends Component {
                                 myLikes={this.state.myLikes}
                                 likedMes={this.state.likedMes}
                                 messages={this.props.messages}
+                                deleteMessages={this.deleteMessages}
                                 // getUnmatched={this.getUnmatched}
                                 // getUnliked={this.getUnliked}
                                 unmatch={this.unmatch}
@@ -261,6 +270,8 @@ export default class ApplicationViews extends Component {
                                 unmatch={this.unmatch}
                                 unlike={this.unlike}
                                 matches={this.state.matches}
+                                deleteMessages={this.deleteMessages}
+                                messages={this.state.messages}
                                 likes={this.state.likes}
                                 users={this.state.users}
                                 dogs={this.state.dogs} />
@@ -319,7 +330,7 @@ export default class ApplicationViews extends Component {
                                 // friends={this.state.friends}
                                 // messagesToMe={this.messagesToMe}
                                 // messagesFromMe={this.messagesFromMe}
-                                refreshData={this.refreshData}
+                                // refreshData={this.refreshData}
                                 addFriend={this.addFriend} />;
                         } else {
                             return <Redirect to="/login" />
@@ -329,7 +340,7 @@ export default class ApplicationViews extends Component {
                     <Route exact path="/messages/new/:toUserId" render={props => {
                         if (this.isAuthenticated()) {
                             return <MessagesForm {...props}
-                                refreshData={this.refreshData}
+                                // refreshData={this.refreshData}
                                 addMessage={this.addMessage} />
                         } else {
                             return <Redirect to="/login" />
