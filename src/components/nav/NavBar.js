@@ -3,7 +3,9 @@ import { Menu, Icon, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default class MenuExampleHeader extends Component {
-  state = { activeItem: 'home' }
+  state = { 
+    activeItem: 'home'
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -15,6 +17,8 @@ export default class MenuExampleHeader extends Component {
     const { activeItem } = this.state;
 
     let username = sessionStorage.getItem("username");
+    // let currentUserId = sessionStorage.getItem("userID");
+    // let currentUserIdParsed = Number(currentUserId)
     let logButton = "";
 
     // zac - testing conditional navbar links
@@ -57,13 +61,13 @@ export default class MenuExampleHeader extends Component {
 
     return (
       <Menu pointing>
-      <Menu.Item
+        <Menu.Item
           as={Link}
           to="/home"
           name="home"
           active={activeItem === "home"}
           onClick={this.handleItemClick}
-        />
+      />
         <Menu.Item
           as={Link}
           to="/profile"
@@ -92,13 +96,13 @@ export default class MenuExampleHeader extends Component {
           active={activeItem === "matches"}
           onClick={this.handleItemClick}
         />
-        <Menu.Item
+        {/* <Menu.Item
           as={Link}
           to="/messages"
           name="messages"
           active={activeItem === "messages"}
           onClick={this.handleItemClick}
-        />
+        /> */}
         <Menu.Menu position="right">
           {logButton}
         </Menu.Menu>

@@ -42,6 +42,9 @@ export default class MatchesList extends Component {
                                     myMatchesUserNames={myMatchesUserNames}
                                     unmatch={this.props.unmatch}
                                     unlike={this.props.unlike}
+                                    messages={this.props.messages}
+                                    messagesToMe={this.props.messagesToMe}
+                                    messagesFromMe={this.props.messagesFromMe}
                                     // getUnmatched={this.props.getUnmatched}
                                     // getUnliked={this.props.getUnliked}
                                     theirLikesForMe={this.props.theirLikesForMe}

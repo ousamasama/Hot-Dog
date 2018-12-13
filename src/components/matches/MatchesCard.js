@@ -62,7 +62,7 @@ export default class MatchesCard extends Component {
     const { open, dimmer } = this.state;
     return (
       <Grid.Column>
-        <Card.Group className="friendsCard">
+        <Card.Group className="matchesCard">
           <Card color='green' key={this.props.user.id} className="card">
             <h5 className="card-title">
               <Image
@@ -73,6 +73,7 @@ export default class MatchesCard extends Component {
 
               <Card.Header>{this.props.user.dogName}, {this.props.user.username}'s Dog</Card.Header>
               <Card.Meta>You matched!</Card.Meta>
+              <Card.Meta></Card.Meta>
               <Button
                 size="tiny"
                 color="red"
@@ -87,7 +88,7 @@ export default class MatchesCard extends Component {
                       this.props.unmatch(theirMatchesForMe[0].id)
                       this.props.unlike(theirLikesForMe[0].id)
                       this.props.unmatch(myMatchesForThem[0].id)
-                      console.log("You unmatched...")
+                      // console.log(`You unmatched ${this.props.user.username}`)
                     })
                 }
                 }
@@ -126,6 +127,12 @@ export default class MatchesCard extends Component {
               >
                 Unmatch
               </Button>
+              <Button
+              onClick={
+                () => this.props.history.push(`/messages/${this.props.user.id}`)
+              }
+              >
+              Messages</Button>
               <Modal
                 dimmer={dimmer}
                 open={open}
@@ -145,7 +152,7 @@ export default class MatchesCard extends Component {
                   />
                   <Modal.Description>
                     <Header>{this.props.user.username}</Header>
-                    <p>This person is your friend!</p>
+                    <p>You matched!</p>
                   </Modal.Description>
                 </Modal.Content>
                 <Modal.Actions>

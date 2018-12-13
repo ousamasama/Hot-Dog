@@ -267,20 +267,117 @@
       "id": 10
     }
   ],
+  "messageSession": [
+    {
+      "id": 1,
+      "userOneId": 1,
+      "userTwoId": 2
+    }
+  ],
   "messages": [
     {
       "message": "beep",
       "username": "Ousama",
-      "userId": 1,
+      "fromUserId": 1,
+      "toUserId": 5,
       "date": "018-11-15T05:34:28.726Z",
-      "id": 1
+      "id": 2
     },
     {
       "message": "boop",
+      "username": "Michael",
+      "fromUserId": 5,
+      "toUserId": 1,
+      "date": "018-11-17T05:34:28.726Z",
+      "id": 3
+    },
+    {
+      "message": "bbba",
+      "username": "Ousama",
+      "fromUserId": 1,
+      "toUserId": 5,
+      "date": "018-11-19T05:34:28.726Z",
+      "id": 4
+    },
+    {
+      "message": "aaab",
+      "username": "Michael",
+      "fromUserId": 5,
+      "toUserId": 1,
+      "date": "018-11-21T05:34:28.726Z",
+      "id": 5
+    },
+    {
+      "message": "ousama",
       "username": "Zac",
-      "userId": 4,
+      "fromUserId": 4,
+      "toUserId": 1,
       "date": "018-11-15T05:34:28.726Z",
-      "id": 2
+      "id": 6
+    },
+    {
+      "message": "zac",
+      "username": "Ousama",
+      "fromUserId": 1,
+      "toUserId": 4,
+      "date": "018-11-19T05:34:28.726Z",
+      "id": 7
+    },
+    {
+      "message": "do u like kiwi",
+      "username": "Brendan",
+      "fromUserId": 2,
+      "toUserId": 1,
+      "date": "2018-12-13T16:50:53.686Z",
+      "id": 8
+    },
+    {
+      "message": "i love kiwi",
+      "username": "Ousama",
+      "fromUserId": 1,
+      "toUserId": 2,
+      "date": "2018-12-13T16:51:53.686Z",
+      "id": 9
+    },
+    {
+      "message": "nice",
+      "date": "2018-12-13T16:53:06.601Z",
+      "fromUserId": 1,
+      "toUserId": 2,
+      "username": "Ousama",
+      "id": 10
+    },
+    {
+      "message": "wanna see kiwi nudes",
+      "date": "2018-12-13T16:57:53.686Z",
+      "fromUserId": 2,
+      "toUserId": 1,
+      "username": "Brendan",
+      "id": 11
+    },
+    {
+      "message": "nice",
+      "date": "2018-12-13T17:12:42.637Z",
+      "fromUserId": 1,
+      "toUserId": 5,
+      "username": "Ousama",
+      "id": 12
+    },
+    {
+      "message": "nice",
+      "date": "2018-12-13T17:13:04.555Z",
+      "fromUserId": 5,
+      "toUserId": 1,
+      "username": "Michael",
+      "id": 13
+    },
+    {
+      "message": "yeah",
+      "date": "2018-12-13T17:14:39.123Z",
+      "fromUserId": 1,
+      "toUserId": 2,
+      "username": "Ousama",
+      "id": 14
     }
   ],
   "dogs": [
