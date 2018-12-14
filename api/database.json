@@ -82,7 +82,7 @@
     },
     {
       "username": "Madi",
-      "password": "Madi",
+      "password": "madi",
       "id": 11,
       "avatar": "https://i.imgur.com/WEO2JS5.jpg",
       "dog": "https://i.imgur.com/WEO2JS5.jpg",
@@ -94,7 +94,7 @@
       "id": 12,
       "avatar": "https://i.imgur.com/hQrIf8b.jpg",
       "dog": "https://i.imgur.com/hQrIf8b.jpg",
-      "dogName": "Kyra"
+      "dogName": "Kira"
     },
     {
       "username": "Kim",
@@ -213,6 +213,20 @@
       "userId": 2,
       "friendId": 5,
       "id": 12
+    },
+    {
+      "matchname": "Madi",
+      "username": "Tanner",
+      "userId": 12,
+      "friendId": 11,
+      "id": 13
+    },
+    {
+      "matchname": "Tanner",
+      "username": "Madi",
+      "userId": 11,
+      "friendId": 12,
+      "id": 14
     }
   ],
   "likes": [
@@ -265,6 +279,16 @@
       "likedUserId": 5,
       "likedByUserId": 2,
       "id": 10
+    },
+    {
+      "likedUserId": 11,
+      "likedByUserId": 12,
+      "id": 11
+    },
+    {
+      "likedUserId": 12,
+      "likedByUserId": 11,
+      "id": 12
     }
   ],
   "messages": [
@@ -355,6 +379,62 @@
       "toUserId": 2,
       "date": "2018-12-13T19:56:48.664Z",
       "id": 15
+    },
+    {
+      "message": "hey",
+      "username": "Ousama",
+      "fromUserId": 1,
+      "toUserId": 6,
+      "date": "2018-12-13T20:48:13.156Z",
+      "id": 16
+    },
+    {
+      "message": "hello",
+      "username": "Joe",
+      "fromUserId": 6,
+      "toUserId": 1,
+      "date": "2018-12-13T20:50:26.521Z",
+      "id": 17
+    },
+    {
+      "message": "you're not ousama test",
+      "username": "Brendan",
+      "fromUserId": 2,
+      "toUserId": 6,
+      "date": "2018-12-13T20:48:13.156Z",
+      "id": 18
+    },
+    {
+      "message": "test you're not ousama",
+      "username": "Joe",
+      "fromUserId": 6,
+      "toUserId": 2,
+      "date": "2018-12-13T20:50:26.521Z",
+      "id": 19
+    },
+    {
+      "message": "hey",
+      "username": "Madi",
+      "fromUserId": 11,
+      "toUserId": 12,
+      "date": "2018-12-14T01:55:42.824Z",
+      "id": 20
+    },
+    {
+      "message": "hey",
+      "username": "Tanner",
+      "fromUserId": 12,
+      "toUserId": 11,
+      "date": "2018-12-14T01:55:56.180Z",
+      "id": 21
+    },
+    {
+      "message": "make more potatoes",
+      "username": "Tanner",
+      "fromUserId": 12,
+      "toUserId": 11,
+      "date": "2018-12-14T01:56:59.980Z",
+      "id": 22
     }
   ],
   "dogs": [
@@ -429,7 +509,7 @@
       "id": 10
     },
     {
-      "name": "Kyra",
+      "name": "Kira",
       "owner": "Tanner",
       "ownerId": 12,
       "picture": "https://i.imgur.com/hQrIf8b.jpg",

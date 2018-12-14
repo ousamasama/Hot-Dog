@@ -50,8 +50,8 @@ export default class UsersCard extends Component {
     }).map(message => {
       return message
     })
-    console.log("their messages", theirMessages)
-    console.log("my messages", myMessages)
+    // console.log("their messages", theirMessages)
+    // console.log("my messages", myMessages)
 
     let theirLikes = this.props.likes.filter(like => {
       if (like.likedUserId === currentUserIdParsed) {
@@ -127,31 +127,63 @@ export default class UsersCard extends Component {
                 color="red"
                 onClick={
                   () => {
-                    myLikes.forEach(like => {
-                      this.props.unlike(like.id)
+                    // debugger;
+                    var results = [];
+                    //put them all into array empty arrays then delete them
+                    // let deleteTheseLikes = []
+                    // let deleteTheseMatches = []
+                    // let deleteTheseMessages = []
+                   let unlikeMyLikes =  myLikes.forEach(like => {
+                     results.push(this.props.unlike(like.id))
+                      // this.props.unlike(like.id)
+                      // deleteTheseLikes.push(like.id)
+                      // results.push(like.id)
                     })
-                    theirLikes.forEach(like => {
-                      this.props.unlike(like.id)
+                    let unlikeTheirLikes = theirLikes.forEach(like => {
+                      results.push(this.props.unlike(like.id))
+                      // this.props.unlike(like.id)
+                      // deleteTheseLikes.push(like.id)
+                      // results.push(like.id)
                     })
-                    myMatches.forEach(match => {
-                      this.props.unmatch(match.id)
+                    let unmatchMyMatches = myMatches.forEach(match => {
+                      results.push(this.props.unmatch(match.id))
+                      // this.props.unmatch(match.id)
+                      // deleteTheseMatches.push(match.id)
+                      // results.push(match.id)
                     })
-                    theirMatches.forEach(match => {
-                      this.props.unmatch(match.id)
+                    let unmatchTheirMatches = theirMatches.forEach(match => {
+                      results.push(this.props.unmatch(match.id))
+                      // this.props.unmatch(match.id)
+                      // deleteTheseMatches.push(match.id)
+                      // results.push(match.id)
                     })
-                    theirMessages.forEach(message => {
-                      this.props.deleteMessages(message.id)
+                    let deleteTheirMessages = theirMessages.forEach(message => {
+                      results.push(this.props.deleteMessages(message.id))
+                      // this.props.deleteMessages(message.id)
+                      // deleteTheseMessages.push(message.id)
+                      // results.push(message.id)
                     })
-                    myMessages.forEach(message => {
-                      this.props.deleteMessages(message.id)
+                    let deleteMyMessages = myMessages.forEach(message => {
+                      results.push(this.props.deleteMessages(message.id))
+                      // this.props.deleteMessages(message.id)
+                      // deleteTheseMessages.push(message.id)
+                      results.push(message.id)
                     })
-                    this.props.deleteUsers(this.props.user.id)
-                    this.props.deleteDogs(myDog[0].id)
+                    // console.log(deleteTheseLikes)
+                    // console.log(deleteTheseMessages)
+                    // console.log(deleteTheseMatches)
+                    let deleteUser = this.props.deleteUsers(this.props.user.id)
+                    results.push(deleteUser)
+                    let deleteDog = this.props.deleteDogs(myDog[0].id)
+                    results.push(deleteDog)
+                    console.log(results)
+
+                      Promise.all(results)
                       .then(() => sessionStorage.clear())
-                      // .then(() => this.props.history.push("/home"))
                       .then(() => {
                         window.location.replace("http://localhost:3000/home")
                       })
+                      .then(() => this.props.history.push("/home"))
                     console.log("Your profile has been deleted and you have been logged out. Return you to our home page.")
                   }
                 }
