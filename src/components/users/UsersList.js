@@ -26,7 +26,8 @@ export default class UsersList extends Component {
             return dog
         })
         return (
-            <React.Fragment className="usersContainer">
+            <React.Fragment>
+            <section className="usersContainer">
                 {
                     myUserName.map(user => {
                         if (currentUser) {
@@ -48,6 +49,7 @@ export default class UsersList extends Component {
                         }
                     })
                 }
+            </section>
             </React.Fragment>
         )
     }

@@ -34,7 +34,7 @@ export default class MessagesList extends Component {
             return 0;
           }
         messages.sort(compare)
-        console.log(messages)
+        // console.log(messages)
         this.setState({
             messages: messages
         })
@@ -42,7 +42,7 @@ export default class MessagesList extends Component {
 
     render() {
         // const toThisMatch = this.props.messages.find(message => message.toUserId === parseInt(this.props.match.params.toUserId))
-        console.log("state", this.state.messages)
+        // console.log("state", this.state.messages)
         let currentUser = sessionStorage.getItem("username");
         let currentUserId = sessionStorage.getItem("userID");
         let currentUserIdParsed = Number(currentUserId)

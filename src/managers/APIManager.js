@@ -36,9 +36,9 @@ class APIManager {
     return fetch(`${remoteURL}/${this.route}/${id}`, {
         method: "DELETE"
       })
-        .then(e => e.json())
-        .then(() => fetch(`${remoteURL}/${this.route}`))
-        .then(e => e.json())
+        // .then(e => e.json())
+        // .then(() => fetch(`${remoteURL}/${this.route}`))
+        // .then(e => e.json())
   }
 
   patch(payload, url) {

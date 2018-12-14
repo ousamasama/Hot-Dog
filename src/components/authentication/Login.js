@@ -62,8 +62,8 @@ export default class Login extends Component {
         // tell the user the result of the test
         // console.log(testResult);
         // console.log("current users id", currentUsersId)
-        this.props.refreshData(currentUsersId)
-        this.props.history.push("/home")
+        // this.props.refreshData(currentUsersId)
+        window.location.replace("http://localhost:3000/profile")
     };
 
     // zac's logout function
@@ -71,7 +71,7 @@ export default class Login extends Component {
         console.log("logout clicked");
         // clear out session storage
         sessionStorage.clear();
-        window.location.replace("http://localhost:3000/home")
+        window.location.replace("http://localhost:3000/login")
     };
 
     render() {

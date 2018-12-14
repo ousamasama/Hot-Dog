@@ -5,7 +5,7 @@ import "./Messages.css";
 
 export default class MatchesMessages extends Component {
   render() {
-    console.log("look at me", this.props.message)
+    // console.log("look at me", this.props.message)
     return (
       // <Card.Group className="othersMessageContainer">
         <Message fluid key={this.props.message.id} className="matchesMessages">

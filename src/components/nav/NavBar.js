@@ -49,9 +49,9 @@ export default class MenuExampleHeader extends Component {
         <React.Fragment>
           <Menu.Item
             as={Link}
-            to="/home"
+            to="/profile"
             name={username}
-            active={activeItem === "home"}
+            active={activeItem === "profile"}
             onClick={this.handleItemClick}
           />
           <Menu.Item as={Link} to="/home" name="logout" onClick={this.logout} />
